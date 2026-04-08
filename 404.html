@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | STACKLY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Michroma&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --primary: #00cd66;
+            --bg-dark: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Abstract Glow Effects */
+        .glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.15;
+            z-index: 0;
+            animation: float 10s ease-in-out infinite alternate;
+        }
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--primary);
+            top: -100px;
+            left: -100px;
+        }
+        .orb-2 {
+            width: 300px;
+            height: 300px;
+            background: #ffffff;
+            bottom: -50px;
+            right: 10%;
+            animation-delay: -5s;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) scale(1); }
+            100% { transform: translateY(30px) scale(1.1); }
+        }
+
+        /* Card Container */
+        .error-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            padding: 4rem 3rem;
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .status-badge {
+            font-size: 0.85rem;
+            font-weight: 800;
+            letter-spacing: 4px;
+            color: var(--primary);
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        /* Glitch 404 Effect based on White/Green Theme */
+        .error-code {
+            font-family: 'Michroma', sans-serif;
+            font-size: 8rem;
+            line-height: 1;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+            color: #ffffff;
+            text-shadow: 
+                3px 0 0 rgba(0, 205, 102, 0.7),
+                -3px 0 0 rgba(255, 255, 255, 0.4);
+        }
+
+        .error-message {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 3rem;
+            max-width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 700;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn i {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Dark/Outline Button */
+        .btn-outline {
+            background: transparent;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* Green Primary Button */
+        .btn-primary {
+            background: var(--primary);
+            color: #0f172a;
+            border: 1px solid var(--primary);
+            box-shadow: 0 4px 15px rgba(0, 205, 102, 0.3);
+        }
+        .btn-primary:hover {
+            background: #00e070;
+            border-color: #00e070;
+            box-shadow: 0 6px 20px rgba(0, 205, 102, 0.4);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .error-card {
+                padding: 3rem 1.5rem;
+            }
+            .error-code {
+                font-size: 5.5rem;
+            }
+            .action-buttons {
+                flex-direction: column;
+            }
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+
+    <div class="error-card">
+        <span class="status-badge">Signal Lost</span>
+        <h1 class="error-code">404</h1>
+        <p class="error-message">The digital pathway you are looking for has been terminated, moved, or restricted. Please return to the core network.</p>
+        
+        <div class="action-buttons">
+            <button onclick="goBack()" class="btn btn-outline">
+                <i data-lucide="arrow-left"></i> Go Back
+            </button>
+            <a href="index.html" class="btn btn-primary">
+                <i data-lucide="home"></i> Back to Home
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Subtly track mouse movement to shift the glowing orbs
+        document.addEventListener('mousemove', (e) => {
+            const orbs = document.querySelectorAll('.glow-orb');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+
+            orbs.forEach((orb, index) => {
+                const multiplier = index === 0 ? 30 : -20;
+                orb.style.transform = `translate(${x * multiplier}px, ${y * multiplier}px)`;
+            });
+            
+            // Add a slight tilt effect to the card 
+            const card = document.querySelector('.error-card');
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 50;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 50;
+            card.style.transform = `perspective(1000px) rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+        });
+
+        // Reset transform on mouse leave
+        document.addEventListener('mouseleave', () => {
+            const card = document.querySelector('.error-card');
+            card.style.transform = `perspective(1000px) rotateY(0deg) rotateX(0deg)`;
+            card.style.transition = 'transform 0.5s ease';
+            
+            setTimeout(() => {
+                card.style.transition = 'none';
+            }, 500);
+        });
+
+        // Go Back Functionality
+        function goBack() {
+            if (document.referrer) {
+                window.history.back();
+            } else {
+                window.location.href = 'index.html';
+            }
+        }
+    </script>
+</body>
+</html>

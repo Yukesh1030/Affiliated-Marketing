@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STACKLY | Smart Financial Decisions Start Here</title>
+    <meta name="description" content="Navigate every money move with guidance you can trust. Expert insights on credit cards, banking, and health.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Michroma&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="nav-left">
+                <a href="404.html" class="brand">
+                    <span>STACKLY</span>
+                </a>
+            </div>
+
+            <nav class="nav-center">
+                <ul class="nav-links">
+                    <li><a href="404.html" class="active">Home</a></li>
+                    <li><a href="404.html">About us</a></li>
+                    <li><a href="404.html">Top Product deals</a></li>
+                    <li><a href="404.html">Credit cards</a></li>
+                    <li><a href="404.html">Health & Wellness</a></li>
+                    <li class="mobile-only"><a href="404.html" class="mobile-login">Login</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-right">
+                <a href="404.html" class="login-btn">
+                    <span>Login</span>
+                    <i data-lucide="user-circle"></i>
+                </a>
+                <button class="mobile-toggle" id="mobileToggle">
+                    <i data-lucide="menu" class="menu-icon"></i>
+                    <i data-lucide="x" class="close-icon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="blob-container">
+                <div class="blob blob-1"></div>
+                <div class="blob blob-2"></div>
+                <div class="blob blob-3"></div>
+            </div>
+            <div class="hero-bg-overlay"></div>
+            <div class="container hero-content">
+                <div class="hero-left">
+                    <h1 class="reveal" style="padding-top: 1px;color: white;"><span class="floating-text">Craft Your Digital Income Engine with</span> <span class="highlight">STACKLY</span></h1>
+                    <p class="reveal" style="color: antiquewhite;">Navigate every money move with guidance you can trust. Empowering your financial future with expert clarity.</p>
+                    
+                    <div class="search-container reveal">
+                        <div class="search-input-wrapper">
+                            <input type="text" placeholder="Ask me about personal finance..." id="heroSearch">
+                            <button class="search-submit" onclick="window.location.href='404.html'">
+                                <i data-lucide="send"></i>
+                            </button>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image-mobile">
+                <img src="asset/hero-bg.webp" alt="Financial Planning">
+            </div>
+        </section>
+
+        <!-- Impact Section -->
+        <section class="find-smarter-rates-today">
+            <div class="rates-container">
+                <div class="rates-header">
+                    <h2>Find smarter rates today</h2>
+                    <p>Quickly compare mortgages or banking rates and see how they stack up<br/>to national averages. Make your next money move with confidence.</p>
+                </div>
+
+                <div class="rates-tabs">
+                    <button class="rate-tab active">
+                        <div class="tab-icon">
+                            <i data-lucide="home"></i>
+                        </div>
+                        <span>Mortgages</span>
+                    </button>
+                    <button class="rate-tab">
+                        <div class="tab-icon"><i data-lucide="landmark"></i></div>
+                        <span>Banking</span>
+                    </button>
+                </div>
+
+                <div class="rates-grid">
+                    <!-- Card 1 -->
+                    <div class="rate-card">
+                        <div class="card-badge">Compare Now</div>
+                        <div class="card-title-row">
+                            <h3>Refinance</h3>
+                            <button class="go-btn" onclick="window.location.href='404.html'"><i data-lucide="arrow-right"></i></button>
+                        </div>
+                        <div class="rate-data">
+                            <div class="rate-row best-rate">
+                                <span class="rate-label">Best rate on STACKLY<br/>(30-Year Fixed)</span>
+                                <div class="rate-value-group">
+                                    <span class="rate-value">6.07%</span>
+                                    <i data-lucide="trending-down" class="trend-icon"></i>
+                                </div>
+                            </div>
+                            <div class="rate-row avg-rate">
+                                <span class="rate-label">Average rate (30-Year Fixed)</span>
+                                <span class="rate-value">5.87%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="rate-card">
+                        <div class="card-title-row">
+                            <h3>30-Year Fixed</h3>
+                            <button class="go-btn" onclick="window.location.href='404.html'"><i data-lucide="arrow-right"></i></button>
+                        </div>
+                        <div class="rate-data">
+                            <div class="rate-row best-rate">
+                                <span class="rate-label">Best rate on STACKLY</span>
+                                <div class="rate-value-group">
+                                    <span class="rate-value">5.96%</span>
+                                    <i data-lucide="trending-down" class="trend-icon"></i>
+                                </div>
+                            </div>
+                            <div class="rate-row avg-rate">
+                                <span class="rate-label">Average rate</span>
+                                <span class="rate-value">6.18%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="rate-card">
+                        <div class="card-title-row">
+                            <h3>15-Year Fixed</h3>
+                            <button class="go-btn" onclick="window.location.href='404.html'"><i data-lucide="arrow-right"></i></button>
+                        </div>
+                        <div class="rate-data">
+                            <div class="rate-row best-rate">
+                                <span class="rate-label">Best rate on STACKLY</span>
+                                <div class="rate-value-group">
+                                    <span class="rate-value">4.99%</span>
+                                    <i data-lucide="trending-down" class="trend-icon"></i>
+                                </div>
+                            </div>
+                            <div class="rate-row avg-rate">
+                                <span class="rate-label">Average rate</span>
+                                <span class="rate-value">5.73%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rates-disclaimer">
+                    <p>Average rates are sourced from Zillow. Terms apply and vary depending on qualifications. Rates are subject to change at any time without notice. See footnote for more details.<sup>1</sup></p>
+                </div>
+
+                <div class="rates-trust">
+                    <span class="trust-badge"><i data-lucide="handshake"></i> Trusted Partners</span>
+                    <span class="trust-badge"><i data-lucide="shield-check"></i> Decide with Confidence</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1. Running Text Marquee -->
+        <section class="affiliate-marquee">
+            <div class="marquee-track">
+                <span>UNLOCK PASSIVE INCOME <i data-lucide="zap"></i></span>
+                <span>PARTNER WITH TOP BRANDS <i data-lucide="star"></i></span>
+                <span>EARN COMPETITIVE COMMISSIONS <i data-lucide="dollar-sign"></i></span>
+                <span>REAL-TIME TRACKING <i data-lucide="activity"></i></span>
+                <span>DEDICATED SUPPORT <i data-lucide="users"></i></span>
+                <!-- Duplicate for seamless loop -->
+                <span aria-hidden="true">UNLOCK PASSIVE INCOME <i data-lucide="zap"></i></span>
+                <span aria-hidden="true">PARTNER WITH TOP BRANDS <i data-lucide="star"></i></span>
+                <span aria-hidden="true">EARN COMPETITIVE COMMISSIONS <i data-lucide="dollar-sign"></i></span>
+                <span aria-hidden="true">REAL-TIME TRACKING <i data-lucide="activity"></i></span>
+                <span aria-hidden="true">DEDICATED SUPPORT <i data-lucide="users"></i></span>
+            </div>
+        </section>
+
+        <!-- 2. Affiliate Hero Section -->
+        <section class="affiliate-hero">
+            <div class="container affiliate-hero-inner">
+                <div class="affiliate-hero-text">
+                    <span class="subheading-badge">STACKLY Partner Program</span>
+                    <h2>Turn Your Audience Into <span class="highlight-text">Revenue</span></h2>
+                    <p>Join the industry-leading affiliate network. Leverage cutting-edge analytics, dedicated support, and top-tier converting financial products to build your digital income engine.</p>
+                    <div class="hero-actions">
+                        <button class="btn btn-primary start-btn" onclick="window.location.href='404.html'">Become a Partner</button>
+                        <a href="404.html" class="learn-more-link">See how it works <i data-lucide="arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="affiliate-hero-image">
+                    <div class="dashboard-mockup">
+                        <img src="asset/affiliate-dashboard.webp" alt="Affiliate Analytics Dashboard">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. How It Works -->
+        <section id="how-it-works" class="how-it-works">
+            <div class="section-header text-center">
+                <h2>Four Steps to <span class="highlight-text">Success</span></h2>
+                <p>Our streamlined process makes it incredibly easy to start earning competitive commissions.</p>
+            </div>
+            <div class="container">               
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">01</div>
+                        <div class="step-icon"><i data-lucide="user-plus"></i></div>
+                        <h3>Join Free</h3>
+                        <p>Sign up for the STACKLY partner program in under 2 minutes. No hidden fees or complex requirements.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">02</div>
+                        <div class="step-icon"><i data-lucide="share-2"></i></div>
+                        <h3>Promote</h3>
+                        <p>Share your unique tracking links across your website, blog, email list, or social channels.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">03</div>
+                        <div class="step-icon"><i data-lucide="bar-chart-2"></i></div>
+                        <h3>Track</h3>
+                        <p>Monitor your clicks, conversions, and earnings in real-time through our advanced dashboard.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">04</div>
+                        <div class="step-icon"><i data-lucide="wallet"></i></div>
+                        <h3>Earn</h3>
+                        <p>Receive reliable exactly-on-time payouts directly to your preferred bank account or digital wallet.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Top Niches -->
+        <section class="top-niches">
+            <div class="section-header text-center">
+                    <h2>High-Converting <span class="highlight-text">Categories</span></h2>
+                    <p>Promote premium products across the most lucrative financial and digital sectors.</p>
+                </div>
+            <div class="container">
+                
+                <div class="niches-grid">
+                    <div class="niche-card tech-niche">
+                        <div class="niche-icon"><i data-lucide="cpu"></i></div>
+                        <div class="niche-content">
+                            <h3>Tech & Software</h3>
+                            <p>Premium SaaS & Hardware</p>
+                        </div>
+                    </div>
+                    <div class="niche-card finance-niche">
+                        <div class="niche-icon"><i data-lucide="landmark"></i></div>
+                        <div class="niche-content">
+                            <h3>Personal Finance</h3>
+                            <p>Cards, Loans & Banking</p>
+                        </div>
+                    </div>
+                    <div class="niche-card crypto-niche">
+                        <div class="niche-icon"><i data-lucide="coins"></i></div>
+                        <div class="niche-content">
+                            <h3>Crypto & Web3</h3>
+                            <p>Exchanges & Wallets</p>
+                        </div>
+                    </div>
+                    <div class="niche-card lifestyle-niche">
+                        <div class="niche-icon"><i data-lucide="gem"></i></div>
+                        <div class="niche-content">
+                            <h3>Premium Lifestyle</h3>
+                            <p>Exclusive Rewards Tech</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Affiliate Success Calculator -->
+        <section class="affiliate-calculator-section">
+            <div class="container calc-container">
+                <div class="calc-text">
+                    <h2>Calculate Your <span class="highlight-text">Potential</span></h2>
+                    <p>Estimate your monthly passive income based on your audience size and conversion capabilities. Our industry-leading cookie duration ensures you get credited for the sales you drive.</p>
+                </div>
+                <div class="calc-widget">
+                    <div class="calc-row">
+                        <div class="calc-label">Monthly Referrals</div>
+                        <div class="calc-slider-track"><div class="calc-slider-fill" style="width: 65%;"></div><div class="calc-slider-thumb" style="left: 65%;"></div></div>
+                        <div class="calc-val">250</div>
+                    </div>
+                    <div class="calc-row">
+                        <div class="calc-label">Avg. Commission per Sale</div>
+                        <div class="calc-slider-track"><div class="calc-slider-fill" style="width: 40%;"></div><div class="calc-slider-thumb" style="left: 40%;"></div></div>
+                        <div class="calc-val">$45.00</div>
+                    </div>
+                    <div class="calc-divider"></div>
+                    <div class="calc-total-box">
+                        <span>Projected Monthly Earnings</span>
+                        <div class="total-amount">$11,250<span class="cents">.00</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Partner Benefits -->
+        <section class="partner-benefits">
+            <div class="section-header text-center">
+                    <h2>The STACKLY <span class="highlight-text">Advantage</span></h2>
+                </div>
+            <div class="container">
+                
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon"><i data-lucide="zap"></i></div>
+                        <h3>Net-15 Payouts</h3>
+                        <p>Get paid faster than the industry standard. Your earnings hit your account consistently, keeping your cash flow positive.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon"><i data-lucide="target"></i></div>
+                        <h3>90-Day Cookies</h3>
+                        <p>Our extended tracking ensures you receive full credit when your referrals return to convert within 3 months.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon"><i data-lucide="headphones"></i></div>
+                        <h3>Dedicated Support</h3>
+                        <p>Work 1-on-1 with experienced affiliate managers dedicated to helping you optimize and scale your campaigns.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. STACKLY vs Traditional Networks -->
+        <section class="stackly-vs-others">
+            <div class="container flex-compare">
+                <div class="compare-intro">
+                    <h2>Why Top Marketers Switch to <span class="highlight-text">STACKLY</span></h2>
+                    <p>We built our network specifically to solve the biggest pain points affiliates face on legacy platforms.</p>
+                </div>
+                <div class="compare-table-wrapper">
+                    <div class="compare-row header-row">
+                        <div class="feature-col">Feature</div>
+                        <div class="stackly-col">STACKLY</div>
+                        <div class="legacy-col">Legacy Networks</div>
+                    </div>
+                    <div class="compare-row">
+                        <div class="feature-col">Commission Structure</div>
+                        <div class="stackly-col"><i data-lucide="check" class="check"></i> Up to 35% Base</div>
+                        <div class="legacy-col"><i data-lucide="x" class="cross"></i> 5% - 10% Base</div>
+                    </div>
+                    <div class="compare-row">
+                        <div class="feature-col">Cookie Duration</div>
+                        <div class="stackly-col"><i data-lucide="check" class="check"></i> 90 Days</div>
+                        <div class="legacy-col"><i data-lucide="x" class="cross"></i> 24 - 48 Hours</div>
+                    </div>
+                    <div class="compare-row">
+                        <div class="feature-col">Payout Threshold</div>
+                        <div class="stackly-col"><i data-lucide="check" class="check"></i> $25 Minimum</div>
+                        <div class="legacy-col"><i data-lucide="x" class="cross"></i> $100+ Minimum</div>
+                    </div>
+                    <div class="compare-row">
+                        <div class="feature-col">Support</div>
+                        <div class="stackly-col"><i data-lucide="check" class="check"></i> Dedicated Manager</div>
+                        <div class="legacy-col"><i data-lucide="x" class="cross"></i> Ticket System Only</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Affiliate CTA -->
+        <section class="affiliate-cta">
+            <div class="container-cta text-center">
+                <h2>Ready to Build Your Passive Income Engine?</h2>
+                <p>Join thousands of successful partners who trust STACKLY to monetize their platform and influence.</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary start-btn large-cta" onclick="window.location.href='404.html'">Apply to Network Now</button>
+                    <span class="cta-note">Applications are approved within 24 hours.</span>
+                </div>
+            </div>
+    </main>
+    
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <a href="404.html" class="footer-logo">STACKLY</a>
+                <p class="copyright">&copy; Copyright 2026 STACKLY</p>
+                <p class="rights">All rights reserved.</p>
+                <ul class="footer-legal">
+                    <li><a href="404.html">Affiliate Disclaimer</a></li>
+                    <li><a href="404.html">Earnings Disclaimer</a></li>
+                    <li><a href="404.html">Terms of Use</a></li>
+                    <li><a href="404.html">DMCA Policy</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-right">
+                <div class="footer-col">
+                    <h4>QUICK LINKS</h4>
+                    <ul>
+                        <li><a href="404.html">Home</a></li>
+                        <li><a href="404.html">About us</a></li>
+                        <li><a href="404.html">Top Product deals</a></li>
+                        <li><a href="404.html">Credit cards</a></li>
+                        <li><a href="404.html">Health & Wellness</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>FREE RESOURCES</h4>
+                    <ul>
+                        <li><a href="404.html">Blog</a></li>
+                        <li><a href="404.html">Guides</a></li>
+                        <li><a href="404.html">Podcast</a></li>
+                        <li><a href="404.html">Newsletter</a></li>
+                        <li><a href="404.html">Tools</a></li>
+                        <li><a href="404.html">Search the Site <i data-lucide="search" class="inline-icon"></i></a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>CONNECT</h4>
+                    <ul>
+                        <li><a href="404.html">Events</a></li>
+                        <li><a href="404.html">Workshops</a></li>
+                        <li><a href="404.html">Sponsors</a></li>
+                        <li><a href="404.html">Sponsorship Inquiries</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>SOCIALS</h4>
+                    <ul>
+                        <li><a href="404.html"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+                        <li><a href="404.html"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
+                        <li><a href="404.html"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></li>
+                        <li><a href="404.html"><i class="fa-solid fa-envelope"></i> Mail</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // GLOBAL REDIRECTION: Ensure all links and cursor:pointer elements lead to 404.html
+        document.addEventListener('click', (e) => {
+            // Find the closest element that is either an 'a' tag or has cursor:pointer
+            const target = e.target.closest('a, button, [onclick]');
+            const computedStyle = window.getComputedStyle(e.target);
+            
+            if (target || computedStyle.cursor === 'pointer') {
+                // If it's a mobile toggle, we can let it work for the menu UI if preferred, 
+                // but the user said "ALL", so we redirect.
+                // To allow the 404 page buttons to work (since they are in the same project), 
+                // we only redirect if we are on index.html or other pages.
+                window.location.href = '404.html';
+                e.preventDefault();
+            }
+        }, true);
+
+        // Update all existing links to point to 404.html for static correctness
+        document.querySelectorAll('a').forEach(link => {
+            link.setAttribute('href', '404.html');
+        });
+    </script>
+</body>
+</html>
