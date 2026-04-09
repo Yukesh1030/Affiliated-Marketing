@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STACKLY | Smart Financial Decisions Start Here</title>
     <meta name="description" content="Navigate every money move with guidance you can trust. Expert insights on credit cards, banking, and health.">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Michroma&display=swap" rel="stylesheet">
@@ -18,15 +18,15 @@
     <header class="navbar">
         <div class="container">
             <div class="nav-left">
-                <a href="404.html" class="brand">
+                <a href="index.html" class="brand">
                     <span>STACKLY</span>
                 </a>
             </div>
 
             <nav class="nav-center">
                 <ul class="nav-links">
-                    <li><a href="404.html" class="active">Home</a></li>
-                    <li><a href="404.html">About us</a></li>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="About.html">About us</a></li>
                     <li><a href="404.html">Top Product deals</a></li>
                     <li><a href="404.html">Credit cards</a></li>
                     <li><a href="404.html">Health & Wellness</a></li>
@@ -456,25 +456,31 @@
         // Initialize Lucide icons
         lucide.createIcons();
 
-        // GLOBAL REDIRECTION: Ensure all links and cursor:pointer elements lead to 404.html
+        // GLOBAL REDIRECTION: Ensure most links and cursor:pointer elements lead to 404.html
         document.addEventListener('click', (e) => {
-            // Find the closest element that is either an 'a' tag or has cursor:pointer
             const target = e.target.closest('a, button, [onclick]');
             const computedStyle = window.getComputedStyle(e.target);
             
             if (target || computedStyle.cursor === 'pointer') {
-                // If it's a mobile toggle, we can let it work for the menu UI if preferred, 
-                // but the user said "ALL", so we redirect.
-                // To allow the 404 page buttons to work (since they are in the same project), 
-                // we only redirect if we are on index.html or other pages.
+                const link = target?.getAttribute('href');
+                // Allow links to index.html and About.html
+                if (link && (link.includes('index.html') || link.includes('About.html') || link.startsWith('#'))) {
+                    return;
+                }
+                
+                // Otherwise, trap to 404
                 window.location.href = '404.html';
                 e.preventDefault();
             }
         }, true);
 
-        // Update all existing links to point to 404.html for static correctness
+        // Update most existing links to point to 404.html
         document.querySelectorAll('a').forEach(link => {
-            link.setAttribute('href', '404.html');
+            const href = link.getAttribute('href');
+            // Allow exact matches or links containing the target filenames
+            if (href && !href.includes('index.html') && !href.includes('About.html') && !href.startsWith('#')) {
+                link.setAttribute('href', '404.html');
+            }
         });
     </script>
 </body>
