@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health & Wellness | STACKLY - Your Vitality Hub</title>
+    <meta name="description" content="Explore premium health and wellness products. From nutritional supplements to fitness tech, find everything you need for a healthier lifestyle.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="HealthWellness.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Michroma&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="nav-left">
+                <a href="index.html" class="brand">
+                    <span>STACKLY</span>
+                </a>
+            </div>
+
+            <nav class="nav-center">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About.html">About us</a></li>
+                    <li><a href="TopProductdeals.html">Top Product deals</a></li>
+                    <li><a href="Creditcards.html">Credit cards</a></li>
+                    <li><a href="HealthWellness.html" class="active">Health & Wellness</a></li>
+                    <li class="mobile-only"><a href="404.html" class="mobile-login">Login</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-right">
+                <a href="404.html" class="login-btn">
+                    <span>Login</span>
+                    <i data-lucide="user-circle"></i>
+                </a>
+                <button class="mobile-toggle" id="mobileToggle">
+                    <i data-lucide="menu" class="menu-icon"></i>
+                    <i data-lucide="x" class="close-icon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. Hero Section -->
+        <section class="hw-hero">
+            <div class="hw-section-container">
+                <h1 class="hw-reveal">Fuel Your <span class="highlight-text">Vitality</span></h1>
+                <p class="hw-reveal">Discover curated health solutions, premium supplements, and elite fitness tech to transform your well-being journey.</p>
+            </div>
+        </section>
+
+        <!-- 2. Product Grid (21 Products, 3 Columns) -->
+        <section class="hw-filters">
+            <div class="hw-section-container">
+                <div class="hw-filter-tabs hw-reveal">
+                    <button class="hw-filter-btn active">All</button>
+                    <button class="hw-filter-btn">Nutrition</button>
+                    <button class="hw-filter-btn">Fitness</button>
+                    <button class="hw-filter-btn">Gadgets</button>
+                </div>
+
+                <div class="hw-product-grid">
+                    <!-- NUTRITION (3 Items) -->
+                    <div class="hw-product-card hw-reveal" data-category="nutrition">
+                        <div class="hw-img-container">
+                            <img src="https://images.unsplash.com/photo-1550831107-1553da8c8464?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Advanced Multivitamins">
+                        </div>
+                        <span class="hw-category-tag">Nutrition</span>
+                        <h3>Advanced Multivitamins</h3>
+                        <p class="hw-price">₹1,299</p>
+                        <button class="hw-btn hw-btn-primary">Shop Now</button>
+                    </div>
+
+                    <div class="hw-product-card hw-reveal" data-category="nutrition" style="transition-delay: 0.1s;">
+                        <div class="hw-img-container">
+                            <img src="https://images.unsplash.com/photo-1579722821273-0f6c7d44362f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Premium Whey Protein">
+                        </div>
+                        <span class="hw-category-tag">Nutrition</span>
+                        <h3>Premium Whey Protein</h3>
+                        <p class="hw-price">₹2,499</p>
+                        <button class="hw-btn hw-btn-primary">Shop Now</button>
+                    </div>
+
+                    <div class="hw-product-card hw-reveal" data-category="nutrition" style="transition-delay: 0.2s;">
+                        <div class="hw-img-container">
+                            <img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Detox Green Tea">
+                        </div>
+                        <span class="hw-category-tag">Nutrition</span>
+                        <h3>Detox Green Tea</h3>
+                        <p class="hw-price">₹450</p>
+                        <button class="hw-btn hw-btn-primary">Shop Now</button>
+                    </div>
+
+                    <!-- FITNESS (3 Items) -->
+                    <div class="hw-product-card hw-reveal" data-category="fitness">
+                        <div class="hw-img-container">
+                            <img src="https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Non-Slip Yoga Mat">
+                        </div>
+                        <span class="hw-category-tag">Fitness</span>
+                        <h3>Non-Slip Yoga Mat</h3>
+                        <p class="hw-price">₹899</p>
+                        <button class="hw-btn hw-btn-primary">Shop Now</button>
+                    </div>
+
+                    <div class="hw-product-card hw-reveal" data-category="fitness" style="transition-delay: 0.1s;">
+                        <div class="hw-img-container">
+                            <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Adjustable Dumbbells">
+                        </div>
+                        <span class="hw-category-tag">Fitness</span>
+                        <h3>Adjustable Dumbbells</h3>
+                        <p class="hw-price">₹4,200</p>
+                        <button class="hw-btn hw-btn-primary">Shop Now</button>
+                    </div>
+
+                    <div class="hw-product-card hw-reveal" data-category="fitness" style="transition-delay: 0.2s;">
+                        <div class="hw-img-container">
+                            <img src="https://images.pexels.com/photos/4031648/pexels-photo-4031648.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Jump Rope Pro">
+                        </div>
+                        <span class="hw-category-tag">Fitness</span>
+                        <h3>Jump Rope Pro</h3>
+                        <p class="hw-price">₹499</p>
+                        <button class="hw-btn hw-btn-primary">Shop Now</button>
+                    </div>
+
+                    <!-- GADGETS (3 Items) -->
+                    <div class="hw-product-card hw-reveal" data-category="gadgets">
+                        <div class="hw-img-container">
+                            <img src="https://images.pexels.com/photos/267394/pexels-photo-267394.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Vitality Smartwatch">
+                        </div>
+                        <span class="hw-category-tag">Gadgets</span>
+                        <h3>Vitality Smartwatch</h3>
+                        <p class="hw-price">₹5,499</p>
+                        <button class="hw-btn hw-btn-primary">Shop Now</button>
+                    </div>
+
+                    <div class="hw-product-card hw-reveal" data-category="gadgets" style="transition-delay: 0.1s;">
+                        <div class="hw-img-container">
+                            <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Wireless Sport Earbuds">
+                        </div>
+                        <span class="hw-category-tag">Gadgets</span>
+                        <h3>Wireless Sport Earbuds</h3>
+                        <p class="hw-price">₹3,999</p>
+                        <button class="hw-btn hw-btn-primary">Shop Now</button>
+                    </div>
+
+                    <div class="hw-product-card hw-reveal" data-category="gadgets" style="transition-delay: 0.2s;">
+                        <div class="hw-img-container">
+                            <img src="https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Smart Eye Massager">
+                        </div>
+                        <span class="hw-category-tag">Gadgets</span>
+                        <h3>Smart Eye Massager</h3>
+                        <p class="hw-price">₹1,999</p>
+                        <button class="hw-btn hw-btn-primary">Shop Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Wellness Quiz Section (Extra 1) -->
+        <section class="hw-quiz-cta hw-reveal">
+            <div class="hw-section-container">
+                <h2>Take the <span class="highlight-text">Wellness Quiz</span></h2>
+                <p>Answer 5 questions and get a personalized stack of wellness products curated for your body type.</p>
+                <button class="hw-btn hw-btn-primary" style="background: white; color: var(--hw-teal); width: auto; margin-top: 2rem;">Start Free Assessment</button>
+            </div>
+        </section>
+
+        <!-- 4. Top Brands Section (Extra 2) -->
+        <section class="hw-brands hw-reveal">
+            <div class="hw-section-container text-center">
+                <h2 style="margin-bottom: 3rem;">Premium <span class="highlight-text">Wellness Partners</span></h2>
+                <div class="hw-networks-grid" style="padding-top: 0;">
+                    <div class="hw-network-item"><img src="https://placehold.co/150x50/ffffff/14b8a6?text=Vitality+Inc" alt="Vitality Inc" style="border-radius: 8px; border: 1px solid #e2e8f0; filter: none; opacity: 1;"></div>
+                    <div class="hw-network-item"><img src="https://placehold.co/150x50/ffffff/14b8a6?text=Pure+Health" alt="Pure Health" style="border-radius: 8px; border: 1px solid #e2e8f0; filter: none; opacity: 1;"></div>
+                    <div class="hw-network-item"><img src="https://placehold.co/150x50/ffffff/14b8a6?text=NutriLife" alt="NutriLife" style="border-radius: 8px; border: 1px solid #e2e8f0; filter: none; opacity: 1;"></div>
+                    <div class="hw-network-item"><img src="https://placehold.co/150x50/ffffff/14b8a6?text=Zen+Fitness" alt="Zen Fitness" style="border-radius: 8px; border: 1px solid #e2e8f0; filter: none; opacity: 1;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Expert Guidance (Extra 3) -->
+        <section class="hw-experts">
+            <div class="hw-section-container">
+                <div class="hw-section-header text-center hw-reveal">
+                    <h2>Expert <span class="highlight-text">Guidance</span></h2>
+                </div>
+                <div class="hw-expert-grid">
+                    <div class="hw-expert-card hw-reveal">
+                        <h3>Stay Hydrated</h3>
+                        <p>Drinking at least 3 liters of water daily can boost your metabolic rate by up to 30% for short periods.</p>
+                    </div>
+                    <div class="hw-expert-card hw-reveal" style="transition-delay: 0.1s;">
+                        <h3>Sleep Hygiene</h3>
+                        <p>Consistent 7-9 hours of deep sleep is the foundation of mental clarity and physical recovery.</p>
+                    </div>
+                    <div class="hw-expert-card hw-reveal" style="transition-delay: 0.2s;">
+                        <h3>Micro-Gymming</h3>
+                        <p>Just 10 minutes of high-intensity activity a day can significantly reduce chronic inflammation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Wellness Journey (Extra 4) -->
+        <section class="hw-journey">
+            <div class="hw-section-container">
+                <div class="hw-section-header text-center hw-reveal">
+                    <h2>Your <span class="highlight-text">3-Step</span> Journey</h2>
+                </div>
+                <div class="hw-step-container">
+                    <div class="hw-step hw-reveal">
+                        <div class="hw-step-number">1</div>
+                        <h3>Discovery</h3>
+                        <p>Browse our curated health catalog and identify your specific wellness goals.</p>
+                    </div>
+                    <div class="hw-step hw-reveal" style="transition-delay: 0.1s;">
+                        <div class="hw-step-number">2</div>
+                        <h3>Customization</h3>
+                        <p>Use our filters to find products that match your dietary and fitness preferences.</p>
+                    </div>
+                    <div class="hw-step hw-reveal" style="transition-delay: 0.2s;">
+                        <div class="hw-step-number">3</div>
+                        <h3>Commitment</h3>
+                        <p>Secure your order and start your journey towards a more vital and energetic life.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Security & Trust (Extra 5) -->
+        <section class="hw-security">
+            <div class="hw-section-container">
+                <div class="hw-security-container hw-reveal" style="background: var(--hw-teal);">
+                    <div class="hw-security-box">
+                        <h2>Your Privacy <span class="highlight-text">Matters</span></h2>
+                        <p>Your health data and transaction history are protected by 256-bit AES encryption. We never share your profiles with third parties.</p>
+                    </div>
+                    <div class="hw-security-list">
+                        <div class="hw-sec-item">
+                            <i data-lucide="shield-check"></i>
+                            <h4>Verified Sellers</h4>
+                            <p>All wellness products are source-verified.</p>
+                        </div>
+                        <div class="hw-sec-item">
+                            <i data-lucide="lock"></i>
+                            <h4>Secure Gateway</h4>
+                            <p>PCI-DSS compliant payment processing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Wellness Community Newsletter (Extra 6) -->
+        <section class="hw-newsletter hw-reveal">
+            <div class="hw-section-container text-center">
+                <h2>Join our <span class="highlight-text">Healthy Community</span></h2>
+                <p>Get weekly health hacks and exclusive discount codes for premium nutrition.</p>
+                <form class="hw-newsletter-form" id="hw-newsletter-form" novalidate>
+                    <div style="flex: 1; text-align: left; position: relative; width: 100%;">
+                        <input type="email" id="hw-email" placeholder="Enter your email" style="width: 100%; box-sizing: border-box;">
+                        <span id="hw-email-error" style="color: #ef4444; font-size: 0.85rem; position: absolute; bottom: -20px; left: 10px; display: none;">Please enter a valid email address.</span>
+                    </div>
+                    <button type="submit" class="hw-btn hw-btn-primary" style="background: var(--hw-teal); min-width: 150px; width: auto; flex-shrink: 0;">Join Now</button>
+                </form>
+                <div id="hw-success-msg" style="color: var(--hw-teal); font-weight: 700; margin-top: 1.5rem; display: none;">Thanks for joining the community! Check your inbox for the welcome code.</div>
+            </div>
+        </section>
+
+        <!-- 9. FAQ Section -->
+        <section class="hw-faq">
+            <div class="hw-section-container">
+                <div class="cc-section-header text-center hw-reveal">
+                    <h2>Common <span class="highlight-text">Queries</span></h2>
+                </div>
+                <div class="hw-faq-item hw-reveal">
+                    <div class="hw-faq-header">
+                        Are these products certified?
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+                    <div class="hw-faq-content">
+                        Yes, all products on STACKLY are sourced from brands with FSSAI or international ISO certifications for quality and safety.
+                    </div>
+                </div>
+                <div class="hw-faq-item hw-reveal">
+                    <div class="hw-faq-header">
+                        How long does shipping take?
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+                    <div class="hw-faq-content">
+                        Wellness products typically ship within 24 hours and are delivered within 3-5 business days across India.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <a href="index.html" class="footer-logo">STACKLY</a>
+                <p class="copyright">&copy; Copyright 2026 STACKLY</p>
+                <p class="rights">All rights reserved.</p>
+                <ul class="footer-legal">
+                    <li><a href="404.html">Affiliate Disclaimer</a></li>
+                    <li><a href="404.html">Earnings Disclaimer</a></li>
+                    <li><a href="404.html">Terms of Use</a></li>
+                    <li><a href="404.html">DMCA Policy</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-right">
+                <div class="footer-col">
+                    <h4>QUICK LINKS</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="About.html">About us</a></li>
+                        <li><a href="TopProductdeals.html">Top Product deals</a></li>
+                        <li><a href="Creditcards.html">Credit cards</a></li>
+                        <li><a href="HealthWellness.html">Health & Wellness</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>FREE RESOURCES</h4>
+                    <ul>
+                        <li><a href="404.html">Blog</a></li>
+                        <li><a href="404.html">Guides</a></li>
+                        <li><a href="404.html">Podcast</a></li>
+                        <li><a href="404.html">Newsletter</a></li>
+                        <li><a href="404.html">Tools</a></li>
+                        <li><a href="404.html">Search the Site <i data-lucide="search" class="inline-icon"></i></a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>CONNECT</h4>
+                    <ul>
+                        <li><a href="404.html">Events</a></li>
+                        <li><a href="404.html">Workshops</a></li>
+                        <li><a href="404.html">Sponsors</a></li>
+                        <li><a href="404.html">Sponsorship Inquiries</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>SOCIALS</h4>
+                    <ul>
+                        <li><a href="404.html"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+                        <li><a href="404.html"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
+                        <li><a href="404.html"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></li>
+                        <li><a href="404.html"><i class="fa-solid fa-envelope"></i> Mail</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+
+        // Reveal Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('hw-active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.hw-reveal').forEach(el => observer.observe(el));
+
+        // FAQ Toggle
+        document.querySelectorAll('.hw-faq-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const icon = header.querySelector('i');
+                const isVisible = content.style.display === 'block';
+                
+                content.style.display = isVisible ? 'none' : 'block';
+                icon.setAttribute('data-lucide', isVisible ? 'chevron-down' : 'chevron-up');
+                lucide.createIcons();
+            });
+        });
+
+        // Filtering Logic
+        const filterBtns = document.querySelectorAll('.hw-filter-btn');
+        const productCards = document.querySelectorAll('.hw-product-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterValue = btn.textContent.toLowerCase();
+
+                productCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category').toLowerCase();
+                    
+                    if (filterValue === 'all' || filterValue === cardCategory) {
+                        card.style.display = 'flex';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 50);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Newsletter Validation Logic
+        const newsletterForm = document.getElementById('hw-newsletter-form');
+        const emailInput = document.getElementById('hw-email');
+        const emailError = document.getElementById('hw-email-error');
+        const successMsg = document.getElementById('hw-success-msg');
+
+        if(newsletterForm) {
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const emailVal = emailInput.value.trim();
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                
+                if(!emailVal || !emailRegex.test(emailVal)) {
+                    emailInput.style.borderColor = '#ef4444';
+                    emailError.style.display = 'block';
+                    successMsg.style.display = 'none';
+                } else {
+                    emailInput.style.borderColor = '#cbd5e1';
+                    emailError.style.display = 'none';
+                    successMsg.style.display = 'block';
+                    emailInput.value = '';
+                    
+                    // Hide success message after 4 seconds
+                    setTimeout(() => {
+                        successMsg.style.display = 'none';
+                    }, 4000);
+                }
+            });
+            
+            // clear error on input
+            emailInput.addEventListener('input', () => {
+                emailInput.style.borderColor = '#cbd5e1';
+                emailError.style.display = 'none';
+            });
+        }
+
+        // GLOBAL REDIRECTION: Ensure most links lead to 404.html
+        document.addEventListener('click', (e) => {
+            const target = e.target.closest('a, button, [onclick]');
+            if (target) {
+                if (
+                    target.id === 'mobileToggle' || 
+                    target.closest('#mobileToggle') || 
+                    target.classList.contains('hw-faq-header') ||
+                    target.classList.contains('hw-filter-btn') ||
+                    target.getAttribute('type') === 'submit'
+                ) {
+                    return;
+                }
+
+                const link = target.getAttribute('href');
+                if (link && (link.includes('index.html') || link.includes('About.html') || link.includes('TopProductdeals.html') || link.includes('Creditcards.html') || link.includes('HealthWellness.html') || link.startsWith('#'))) {
+                    return;
+                }
+                
+                window.location.href = '404.html';
+                e.preventDefault();
+            }
+        }, true);
+
+        // Update most existing links to point to 404.html
+        document.querySelectorAll('a').forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && !href.includes('index.html') && !href.includes('About.html') && !href.includes('TopProductdeals.html') && !href.includes('Creditcards.html') && !href.includes('HealthWellness.html') && !href.startsWith('#')) {
+                link.setAttribute('href', '404.html');
+            }
+        });
+    </script>
+</body>
+</html>

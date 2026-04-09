@@ -1,0 +1,403 @@
+/* --- CREDIT CARDS PAGE STYLES --- */
+
+:root {
+    --card-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --s-primary: #00cd66;
+    --s-navy: #0f172a;
+}
+
+body {
+    background-color: #f8fafc;
+}
+
+/* Section Container - Custom naming to avoid style.css conflict */
+.cc-section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Hero Section */
+.cc-hero {
+    background: var(--s-navy);
+    padding: 140px 1rem 80px;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.cc-hero h1 {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-family: 'Michroma', sans-serif;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.cc-hero p {
+    font-size: 1.25rem;
+    color: #94a3b8;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Categories Section */
+.cc-categories {
+    padding: 80px 0;
+}
+
+.cc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* Credit Card Item */
+.cc-card {
+    background: white;
+    border-radius: 24px;
+    padding: 2.5rem 2rem;
+    border: 1px solid #e2e8f0;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.cc-card:hover {
+    transform: translateY(-12px);
+    box-shadow: var(--card-shadow);
+    border-color: var(--s-primary);
+}
+
+.cc-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 205, 102, 0.1);
+    color: var(--s-primary);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.cc-card-logo {
+    width: 60px;
+    height: 40px;
+    object-fit: contain;
+    margin-bottom: 2rem;
+}
+
+.cc-card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 2rem;
+    transition: transform 0.5s ease;
+}
+
+.cc-card:hover .cc-card-img {
+    transform: rotate(-5deg) scale(1.05);
+}
+
+.cc-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--s-navy);
+}
+
+.cc-benefits {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+    flex-grow: 1;
+}
+
+.cc-benefits li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    color: #475569;
+}
+
+.cc-benefits i {
+    color: var(--s-primary);
+    font-size: 1.1rem;
+}
+
+.cc-action-btn {
+    width: 100%;
+    padding: 1.2rem;
+    background: var(--s-navy);
+    color: white;
+    text-align: center;
+    border-radius: 14px;
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.cc-action-btn:hover {
+    background: var(--s-primary);
+    transform: scale(1.02);
+}
+
+/* Info Section (Added Value) */
+.cc-info-section {
+    background: #f1f5f9;
+    padding: 100px 0;
+}
+
+.cc-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 4rem;
+}
+
+.cc-info-box h2 {
+    font-family: 'Michroma', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.cc-info-box p {
+    color: #64748b;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+/* FAQ */
+.cc-faq {
+    padding: 80px 0;
+}
+
+.cc-faq-item {
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+}
+
+.cc-faq-header {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.cc-faq-content {
+    padding: 0 1.5rem 1.5rem;
+    color: #64748b;
+    display: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .cc-grid {
+        grid-template-columns: 1fr; /* Stacks one by one as requested */
+    }
+    
+    .cc-hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .cc-section-container {
+        padding: 1.5rem;
+    }
+}
+
+/* Animations */
+.cc-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cc-reveal.cc-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- NEW SECTIONS STYLES --- */
+
+.cc-section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.cc-section-header h2 {
+    font-size: 2.5rem;
+    font-family: 'Michroma', sans-serif;
+    color: var(--s-navy);
+}
+
+/* Comparison Matrix */
+.cc-table-scroll {
+    overflow-x: auto;
+    background: white;
+    border-radius: 24px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid #e2e8f0;
+}
+
+.cc-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.cc-table th, .cc-table td {
+    padding: 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.cc-table th {
+    background: #f8fafc;
+    font-weight: 700;
+    color: var(--s-navy);
+}
+
+.cc-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Card Networks */
+.cc-networks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 3rem;
+    align-items: center;
+    justify-items: center;
+    padding: 3rem 0;
+}
+
+.cc-network-item {
+    filter: grayscale(1);
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.cc-network-item:hover {
+    filter: grayscale(0);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.cc-network-item img {
+    height: 50px;
+    object-fit: contain;
+}
+
+/* Step Guide */
+.cc-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.cc-step-item {
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: 24px;
+    text-align: center;
+    border: 1px solid #f1f5f9;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.cc-step-item:hover {
+    border-color: var(--s-primary);
+    transform: translateY(-5px);
+}
+
+.cc-step-num {
+    width: 40px;
+    height: 40px;
+    background: var(--s-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    margin: 0 auto 1.5rem;
+}
+
+/* Security Box */
+.cc-security-container {
+    background: var(--s-navy);
+    padding: 60px;
+    border-radius: 32px;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.cc-security-box h2 {
+    font-family: 'Michroma', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.cc-security-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.cc-sec-item i {
+    color: var(--s-primary);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* Newsletter */
+.cc-newsletter {
+    background: #e2e8f0;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.cc-newsletter-form {
+    max-width: 500px;
+    margin: 3rem auto 0;
+    display: flex;
+    gap: 1rem;
+}
+
+.cc-newsletter-form input {
+    flex: 1;
+    padding: 1.2rem 1.5rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 14px;
+    font-size: 1rem;
+}
+
+.cc-newsletter-form button {
+    padding: 1.2rem 2.5rem;
+}
+
+@media (max-width: 900px) {
+    .cc-security-container {
+        grid-template-columns: 1fr;
+        padding: 40px 20px;
+    }
+    
+    .cc-newsletter-form {
+        flex-direction: column;
+    }
+}

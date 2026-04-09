@@ -29,8 +29,8 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="About.html">About us</a></li>
                     <li><a href="TopProductdeals.html" class="active">Top Product deals</a></li>
-                    <li><a href="404.html">Credit cards</a></li>
-                    <li><a href="404.html">Health & Wellness</a></li>
+                    <li><a href="Creditcards.html">Credit cards</a></li>
+                    <li><a href="HealthWellness.html">Health & Wellness</a></li>
                     <li class="mobile-only"><a href="404.html" class="mobile-login">Login</a></li>
                 </ul>
             </nav>
@@ -593,8 +593,8 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="About.html">About us</a></li>
                         <li><a href="TopProductdeals.html">Top Product deals</a></li>
-                        <li><a href="404.html">Credit cards</a></li>
-                        <li><a href="404.html">Health & Wellness</a></li>
+                        <li><a href="Creditcards.html">Credit cards</a></li>
+                        <li><a href="HealthWellness.html">Health & Wellness</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -794,11 +794,11 @@
         document.addEventListener('click', (e) => {
             const target = e.target.closest('a, button, [onclick], .meta-icon');
             if (target) {
-                // Allow carousel arrows, mobile toggle, tabs, and filter headers
-                if (target.classList.contains('carousel-arrow') || 
+                // EXEMPTIONS: Mobile toggle, FAQ headers, carousel arrows, or other internal UI elements
+                if (target.id === 'mobileToggle' || 
+                    target.closest('#mobileToggle') || 
+                    target.classList.contains('carousel-arrow') || 
                     target.closest('.carousel-arrow') || 
-                    target.id === 'mobileToggle' || 
-                    target.closest('#mobileToggle') ||
                     target.classList.contains('tab-btn') ||
                     target.classList.contains('filter-header') ||
                     target.closest('.filter-header') ||
@@ -808,7 +808,7 @@
                 }
 
                 const link = target.getAttribute('href');
-                if (link && (link.includes('index.html') || link.includes('About.html') || link.includes('TopProductdeals.html') || link.startsWith('#'))) {
+                if (link && (link.includes('index.html') || link.includes('About.html') || link.includes('TopProductdeals.html') || link.includes('Creditcards.html') || link.includes('HealthWellness.html') || link.startsWith('#'))) {
                     return;
                 }
                 

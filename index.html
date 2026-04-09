@@ -28,8 +28,8 @@
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="About.html">About us</a></li>
                     <li><a href="TopProductdeals.html">Top Product deals</a></li>
-                    <li><a href="404.html">Credit cards</a></li>
-                    <li><a href="404.html">Health & Wellness</a></li>
+                    <li><a href="Creditcards.html">Credit cards</a></li>
+                    <li><a href="HealthWellness.html">Health & Wellness</a></li>
                     <li class="mobile-only"><a href="404.html" class="mobile-login">Login</a></li>
                 </ul>
             </nav>
@@ -413,8 +413,8 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="About.html">About us</a></li>
                         <li><a href="TopProductdeals.html">Top Product deals</a></li>
-                        <li><a href="404.html">Credit cards</a></li>
-                        <li><a href="404.html">Health & Wellness</a></li>
+                        <li><a href="Creditcards.html">Credit cards</a></li>
+                        <li><a href="HealthWellness.html">Health & Wellness</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -460,8 +460,11 @@
         document.addEventListener('click', (e) => {
             const target = e.target.closest('a, button, [onclick]');
             if (target) {
+                // EXEMPTIONS: Mobile toggle, FAQ headers, or other internal UI elements
+                if (target.id === 'mobileToggle' || target.closest('#mobileToggle')) return;
+
                 const link = target.getAttribute('href');
-                if (link && (link.includes('index.html') || link.includes('About.html') || link.includes('TopProductdeals.html') || link.startsWith('#'))) {
+                if (link && (link.includes('index.html') || link.includes('About.html') || link.includes('TopProductdeals.html') || link.includes('Creditcards.html') || link.includes('HealthWellness.html') || link.startsWith('#'))) {
                     return;
                 }
                 
@@ -473,7 +476,7 @@
         // Update most existing links to point to 404.html
         document.querySelectorAll('a').forEach(link => {
             const href = link.getAttribute('href');
-            if (href && !href.includes('index.html') && !href.includes('About.html') && !href.includes('TopProductdeals.html') && !href.startsWith('#')) {
+            if (href && !href.includes('index.html') && !href.includes('About.html') && !href.includes('TopProductdeals.html') && !href.includes('Creditcards.html') && !href.includes('HealthWellness.html') && !href.startsWith('#')) {
                 link.setAttribute('href', '404.html');
             }
         });
