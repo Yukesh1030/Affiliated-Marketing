@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | STACKLY</title>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body class="auth-page">
+
+    <div class="auth-header">
+        <a href="index.html"><i data-lucide="arrow-left" style="width: 16px; height: 16px;"></i> Back to Home</a>
+    </div>
+
+    <div class="auth-container">
+        <div class="auth-logo">STACKLY</div>
+        
+        <div class="auth-titles">
+            <h1>Welcome Back</h1>
+            <p>Login to access your STACKLY account</p>
+        </div>
+
+        <form class="auth-form" id="loginForm">
+            <div class="form-group">
+                <label for="role">Login As</label>
+                <select id="role">
+                    <option value="Customer">Customer</option>
+                    <option value="Seller">Seller</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" value="admin@stackly.com" required>
+                <div class="error-text" id="emailError">Please enter a valid email</div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 0.5rem;">
+                <label for="password">Password</label>
+                <input type="password" id="password" value="admin123" required>
+                <div class="error-text" id="passwordError">Password cannot be empty</div>
+            </div>
+            
+            <div class="auth-password-opts" style="margin-top: 0.5rem;">
+                <a href="404.html">Forgot Password?</a>
+            </div>
+
+            <button type="submit" class="auth-btn">
+                Login <i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i>
+            </button>
+        </form>
+
+        <div class="auth-sample-creds">
+            <strong>Sample Credentials</strong>
+            <span>Email: admin@stackly.com</span>
+            <span>Password: admin123</span>
+        </div>
+
+        <div class="auth-footer">
+            Don't have an account? <a href="Signup.html">Sign up</a>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email');
+            const password = document.getElementById('password');
+            const role = document.getElementById('role').value;
+            let isValid = true;
+
+            // Simple validation
+            if (!email.value || !email.value.includes('@')) {
+                email.classList.add('input-error');
+                document.getElementById('emailError').style.display = 'block';
+                isValid = false;
+            } else {
+                email.classList.remove('input-error');
+                document.getElementById('emailError').style.display = 'none';
+            }
+
+            if (!password.value) {
+                password.classList.add('input-error');
+                document.getElementById('passwordError').style.display = 'block';
+                isValid = false;
+            } else {
+                password.classList.remove('input-error');
+                document.getElementById('passwordError').style.display = 'none';
+            }
+
+            if (isValid) {
+                // Role-based routing logic
+                // Using setTimeout to simulate network request delay for smooth UX
+                const btn = document.querySelector('.auth-btn');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="animation: spin 1s linear infinite;"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>';
+                
+                setTimeout(() => {
+                    if(role === 'Customer') {
+                        window.location.href = 'CustomerDashboard.html';
+                    } else {
+                        window.location.href = 'SellerDashboard.html';
+                    }
+                }, 800);
+            }
+        });
+    </script>
+    <style>
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+    </style>
+</body>
+</html>

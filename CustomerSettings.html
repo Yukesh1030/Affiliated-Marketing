@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings | STACKLY Dashboard</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="dash-overlay" id="mobileOverlay"></div>
+
+    <aside class="dash-sidebar" id="sidebar">
+        <a href="index.html" class="dash-logo">STACKLY</a>
+        
+        <nav class="dash-nav">
+            <a href="CustomerDashboard.html" class="dash-nav-item">
+                <i data-lucide="layout-dashboard"></i> Overview
+            </a>
+            <a href="CustomerOrderTracking.html" class="dash-nav-item">
+                <i data-lucide="package"></i> Order Tracking
+            </a>
+            <a href="CustomerSavedItems.html" class="dash-nav-item">
+                <i data-lucide="heart"></i> Saved Items
+            </a>
+            <a href="CustomerSettings.html" class="dash-nav-item active">
+                <i data-lucide="settings"></i> Account Settings
+            </a>
+        </nav>
+
+        <div class="dash-logout">
+            <a href="Login.html" class="dash-nav-item">
+                <i data-lucide="log-out"></i> Sign Out
+            </a>
+        </div>
+    </aside>
+
+    <main class="dash-main">
+        <header class="dash-header">
+            <button class="dash-menu-btn" id="menuBtn">
+                <i data-lucide="menu"></i>
+            </button>
+            <div style="flex: 1; margin-left: 1.5rem;">
+                <a href="index.html" style="font-weight: 600; color: var(--dash-muted); display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;"><i data-lucide="arrow-left" style="width: 16px; height: 16px;"></i> Back to Home</a>
+            </div>
+            <div class="dash-user">
+                <span>Welcome, <strong>Customer</strong></span>
+                <div class="dash-avatar">C</div>
+            </div>
+        </header>
+
+        <div class="dash-content">
+            <h1 class="dash-title">Account Settings</h1>
+
+            <div class="dash-panel" style="max-width: 600px;">
+                <h2 style="border-bottom: 1px solid var(--dash-border); padding-bottom: 1rem; margin-bottom: 1.5rem;">Profile Information</h2>
+                
+                <form action="#" onsubmit="event.preventDefault(); window.location.href='404.html';">
+                    <div class="dash-form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" value="John Doe">
+                    </div>
+                    
+                    <div class="dash-form-group">
+                        <label for="emailAddr">Email Address</label>
+                        <input type="email" id="emailAddr" value="customer@stackly.com">
+                    </div>
+
+                    <div class="dash-form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" value="+91 9876543210">
+                    </div>
+
+                    <div style="margin-top: 2rem;">
+                        <button type="submit" class="dash-btn">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="dash-panel" style="max-width: 600px; margin-top: 2rem;">
+                <h2 style="border-bottom: 1px solid var(--dash-border); padding-bottom: 1rem; margin-bottom: 1.5rem;">Password & Security</h2>
+                
+                <form action="#" onsubmit="event.preventDefault(); window.location.href='404.html';">
+                    <div class="dash-form-group">
+                        <label for="currentPass">Current Password</label>
+                        <input type="password" id="currentPass" placeholder="••••••••">
+                    </div>
+                    
+                    <div class="dash-form-group">
+                        <label for="newPass">New Password</label>
+                        <input type="password" id="newPass" placeholder="••••••••">
+                    </div>
+
+                    <div style="margin-top: 2rem;">
+                        <button type="submit" class="dash-btn" style="background: var(--dash-text);">Update Password</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        lucide.createIcons();
+        const menuBtn = document.getElementById('menuBtn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('mobileOverlay');
+
+        function toggleSidebar() {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        menuBtn.addEventListener('click', toggleSidebar);
+        overlay.addEventListener('click', toggleSidebar);
+    </script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard | STACKLY</title>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <div class="dash-overlay" id="mobileOverlay"></div>
+
+    <aside class="dash-sidebar" id="sidebar">
+        <a href="index.html" class="dash-logo">STACKLY</a>
+        
+        <nav class="dash-nav">
+            <a href="CustomerDashboard.html" class="dash-nav-item active">
+                <i data-lucide="layout-dashboard"></i> Overview
+            </a>
+            <a href="CustomerOrderTracking.html" class="dash-nav-item">
+                <i data-lucide="package"></i> Order Tracking
+            </a>
+            <a href="CustomerSavedItems.html" class="dash-nav-item">
+                <i data-lucide="heart"></i> Saved Items
+            </a>
+            <a href="CustomerSettings.html" class="dash-nav-item">
+                <i data-lucide="settings"></i> Account Settings
+            </a>
+        </nav>
+
+        <div class="dash-logout">
+            <a href="Login.html" class="dash-nav-item">
+                <i data-lucide="log-out"></i> Sign Out
+            </a>
+        </div>
+    </aside>
+
+    <main class="dash-main">
+        <header class="dash-header">
+            <button class="dash-menu-btn" id="menuBtn">
+                <i data-lucide="menu"></i>
+            </button>
+            <div style="flex: 1; margin-left: 1.5rem;">
+                <a href="index.html" style="font-weight: 600; color: var(--dash-muted); display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;"><i data-lucide="arrow-left" style="width: 16px; height: 16px;"></i> Back to Home</a>
+            </div>
+            <div class="dash-user">
+                <span>Welcome, <strong>Customer</strong></span>
+                <div class="dash-avatar">C</div>
+            </div>
+        </header>
+
+        <div class="dash-content">
+            <h1 class="dash-title">Customer Dashboard</h1>
+
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="stat-icon"><i data-lucide="shopping-bag"></i></div>
+                    <div class="stat-info">
+                        <h3>Total Orders</h3>
+                        <div class="value">12</div>
+                    </div>
+                </div>
+                <div class="stat-card" style="animation-delay: 0.1s;">
+                    <div class="stat-icon" style="color: #3b82f6; background: rgba(59, 130, 246, 0.1);"><i data-lucide="truck"></i></div>
+                    <div class="stat-info">
+                        <h3>In Transit</h3>
+                        <div class="value">2</div>
+                    </div>
+                </div>
+                <div class="stat-card" style="animation-delay: 0.2s;">
+                    <div class="stat-icon" style="color: #f59e0b; background: rgba(245, 158, 11, 0.1);"><i data-lucide="star"></i></div>
+                    <div class="stat-info">
+                        <h3>Saved Products</h3>
+                        <div class="value">24</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dash-panel">
+                <h2>Recent Order Tracking</h2>
+                <div class="dash-table-container">
+                    <table class="dash-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Product</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#ORD-8923</td>
+                                <td>Premium Whey Protein</td>
+                                <td>Oct 24, 2024</td>
+                                <td><span class="dash-badge badge-active">Delivered</span></td>
+                                <td><a href="CustomerOrderTracking.html" style="color: var(--dash-primary); font-weight: 600;">Track</a></td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-8945</td>
+                                <td>Vitality Smartwatch</td>
+                                <td>Oct 28, 2024</td>
+                                <td><span class="dash-badge badge-pending">Shipped</span></td>
+                                <td><a href="CustomerOrderTracking.html" style="color: var(--dash-primary); font-weight: 600;">Track</a></td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-8951</td>
+                                <td>Non-Slip Yoga Mat</td>
+                                <td>Nov 01, 2024</td>
+                                <td><span class="dash-badge badge-pending">Processing</span></td>
+                                <td><a href="CustomerOrderTracking.html" style="color: var(--dash-primary); font-weight: 600;">Track</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        lucide.createIcons();
+        
+        // Mobile sidebar toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('mobileOverlay');
+
+        function toggleSidebar() {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        menuBtn.addEventListener('click', toggleSidebar);
+        overlay.addEventListener('click', toggleSidebar);
+    </script>
+</body>
+</html>

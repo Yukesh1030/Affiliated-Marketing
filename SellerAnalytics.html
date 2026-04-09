@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics | STACKLY PRO</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="dashboard.css">
+    <style>
+        .chart-box {
+            background: var(--dash-white);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--dash-shadow);
+            height: 300px;
+            display: flex;
+            align-items: flex-end;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .chart-bar {
+            flex: 1;
+            background: var(--dash-primary);
+            border-radius: 6px 6px 0 0;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+            animation: growUp 1s ease-out forwards;
+            transform-origin: bottom;
+            min-height: 10px;
+        }
+        .chart-bar:hover { opacity: 1; }
+        @keyframes growUp {
+            from { transform: scaleY(0); }
+            to { transform: scaleY(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="dash-overlay" id="mobileOverlay"></div>
+
+    <aside class="dash-sidebar" id="sidebar">
+        <a href="index.html" class="dash-logo">STACKLY <span style="font-size:0.6rem; vertical-align: top; color: var(--dash-primary);">PRO</span></a>
+        
+        <nav class="dash-nav">
+            <a href="SellerDashboard.html" class="dash-nav-item">
+                <i data-lucide="layout-dashboard"></i> Dashboard
+            </a>
+            <a href="SellerProducts.html" class="dash-nav-item">
+                <i data-lucide="package-search"></i> Products
+            </a>
+            <a href="SellerAnalytics.html" class="dash-nav-item active">
+                <i data-lucide="bar-chart-3"></i> Sales Analytics
+            </a>
+            <a href="SellerEarnings.html" class="dash-nav-item">
+                <i data-lucide="wallet"></i> Earnings
+            </a>
+            <a href="SellerMarketing.html" class="dash-nav-item">
+                <i data-lucide="megaphone"></i> Marketing
+            </a>
+            <a href="SellerSettings.html" class="dash-nav-item">
+                <i data-lucide="settings"></i> Settings
+            </a>
+        </nav>
+
+        <div class="dash-logout">
+            <a href="Login.html" class="dash-nav-item">
+                <i data-lucide="log-out"></i> Sign Out
+            </a>
+        </div>
+    </aside>
+
+    <main class="dash-main">
+        <header class="dash-header">
+            <button class="dash-menu-btn" id="menuBtn">
+                <i data-lucide="menu"></i>
+            </button>
+            <div style="flex: 1; margin-left: 1.5rem;">
+                <a href="index.html" style="font-weight: 600; color: var(--dash-muted); display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;"><i data-lucide="arrow-left" style="width: 16px; height: 16px;"></i> Back to Home</a>
+            </div>
+            <div class="dash-user">
+                <span>Welcome, <strong>Seller</strong></span>
+                <div class="dash-avatar" style="background: #0f172a;">S</div>
+            </div>
+        </header>
+
+        <div class="dash-content">
+            <h1 class="dash-title">Performance Analytics</h1>
+            
+            <div class="dash-panel" style="animation: dashFade 0.4s ease forwards;">
+                <h2 style="margin-bottom: 2rem;">Weekly Conversions</h2>
+                <div class="chart-box">
+                    <div class="chart-bar" style="height: 40%;" title="Mon: 40"></div>
+                    <div class="chart-bar" style="height: 60%;" title="Tue: 60"></div>
+                    <div class="chart-bar" style="height: 50%;" title="Wed: 50"></div>
+                    <div class="chart-bar" style="height: 80%;" title="Thu: 80"></div>
+                    <div class="chart-bar" style="height: 30%;" title="Fri: 30"></div>
+                    <div class="chart-bar" style="height: 95%;" title="Sat: 95"></div>
+                    <div class="chart-bar" style="height: 70%;" title="Sun: 70"></div>
+                </div>
+                <div style="display: flex; justify-content: space-between; color: var(--dash-muted); font-size: 0.85rem; font-weight: 600; text-transform: uppercase;">
+                    <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+                </div>
+            </div>
+
+            <div class="dash-panel" style="animation: dashFade 0.6s ease forwards; opacity: 0;">
+                <h2 style="margin-bottom: 2rem;">Traffic Demographics & Sources</h2>
+                <div class="dash-table-container">
+                    <table class="dash-table">
+                        <thead>
+                            <tr>
+                                <th>Source / Medium</th>
+                                <th>Active Users</th>
+                                <th>Bounce Rate</th>
+                                <th>Avg. Session Duration</th>
+                                <th>Conversion Rate</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><i data-lucide="instagram" style="width: 16px; vertical-align: middle; margin-right: 8px;"></i> Instagram Story Swipe-Up</td>
+                                <td>2,450</td>
+                                <td>42.5%</td>
+                                <td>00:03:12</td>
+                                <td style="color: #10b981; font-weight: 700;">4.2%</td>
+                            </tr>
+                            <tr>
+                                <td><i data-lucide="youtube" style="width: 16px; vertical-align: middle; margin-right: 8px;"></i> YouTube Description Link</td>
+                                <td>1,120</td>
+                                <td>28.1%</td>
+                                <td>00:05:45</td>
+                                <td style="color: #10b981; font-weight: 700;">6.8%</td>
+                            </tr>
+                            <tr>
+                                <td><i data-lucide="mail" style="width: 16px; vertical-align: middle; margin-right: 8px;"></i> Direct Newsletter blast</td>
+                                <td>856</td>
+                                <td>15.2%</td>
+                                <td>00:06:30</td>
+                                <td style="color: #10b981; font-weight: 700;">8.5%</td>
+                            </tr>
+                            <tr>
+                                <td><i data-lucide="layout" style="width: 16px; vertical-align: middle; margin-right: 8px;"></i> Organic Blog Post</td>
+                                <td>410</td>
+                                <td>55.0%</td>
+                                <td>00:01:45</td>
+                                <td style="color: #10b981; font-weight: 700;">1.2%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <a href="404.html" class="dash-btn" style="text-decoration:none;"><i data-lucide="download" style="width: 16px; vertical-align: middle;"></i> Export Full CSV Report</a>
+        </div>
+    </main>
+
+    <script>
+        lucide.createIcons();
+        const menuBtn = document.getElementById('menuBtn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('mobileOverlay');
+
+        function toggleSidebar() {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        menuBtn.addEventListener('click', toggleSidebar);
+        overlay.addEventListener('click', toggleSidebar);
+
+        // Enforce 404 trapping
+        document.querySelectorAll('a:not(.dash-nav-item):not([href="index.html"])').forEach(link => {
+            link.addEventListener('click', e => { e.preventDefault(); window.location.href = '404.html'; });
+        });
+    </script>
+</body>
+</html>

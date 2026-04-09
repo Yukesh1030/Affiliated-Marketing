@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Dashboard | STACKLY</title>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <div class="dash-overlay" id="mobileOverlay"></div>
+
+    <aside class="dash-sidebar" id="sidebar">
+        <a href="index.html" class="dash-logo">STACKLY <span style="font-size:0.6rem; vertical-align: top; color: var(--dash-primary);">PRO</span></a>
+        
+        <nav class="dash-nav">
+            <a href="SellerDashboard.html" class="dash-nav-item active">
+                <i data-lucide="layout-dashboard"></i> Dashboard
+            </a>
+            <a href="SellerProducts.html" class="dash-nav-item">
+                <i data-lucide="package-search"></i> Products
+            </a>
+            <a href="SellerAnalytics.html" class="dash-nav-item">
+                <i data-lucide="bar-chart-3"></i> Sales Analytics
+            </a>
+            <a href="SellerEarnings.html" class="dash-nav-item">
+                <i data-lucide="wallet"></i> Earnings
+            </a>
+            <a href="SellerMarketing.html" class="dash-nav-item">
+                <i data-lucide="megaphone"></i> Marketing
+            </a>
+            <a href="SellerSettings.html" class="dash-nav-item">
+                <i data-lucide="settings"></i> Settings
+            </a>
+        </nav>
+
+        <div class="dash-logout">
+            <a href="Login.html" class="dash-nav-item">
+                <i data-lucide="log-out"></i> Sign Out
+            </a>
+        </div>
+    </aside>
+
+    <main class="dash-main">
+        <header class="dash-header">
+            <button class="dash-menu-btn" id="menuBtn">
+                <i data-lucide="menu"></i>
+            </button>
+            <div style="flex: 1; margin-left: 1.5rem;">
+                <a href="index.html" style="font-weight: 600; color: var(--dash-muted); display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;"><i data-lucide="arrow-left" style="width: 16px; height: 16px;"></i> Back to Home</a>
+            </div>
+            <div class="dash-user">
+                <span>Welcome, <strong>Seller</strong></span>
+                <div class="dash-avatar" style="background: #0f172a;">S</div>
+            </div>
+        </header>
+
+        <div class="dash-content">
+            <h1 class="dash-title">Seller Overview</h1>
+
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="stat-icon" style="color: #10b981; background: rgba(16, 185, 129, 0.1);"><i data-lucide="indian-rupee"></i></div>
+                    <div class="stat-info">
+                        <h3>Total Revenue</h3>
+                        <div class="value">₹1,24,500</div>
+                    </div>
+                </div>
+                <div class="stat-card" style="animation-delay: 0.1s;">
+                    <div class="stat-icon" style="color: #3b82f6; background: rgba(59, 130, 246, 0.1);"><i data-lucide="trending-up"></i></div>
+                    <div class="stat-info">
+                        <h3>Affiliate Link Clicks</h3>
+                        <div class="value">3,542</div>
+                    </div>
+                </div>
+                <div class="stat-card" style="animation-delay: 0.2s;">
+                    <div class="stat-icon" style="color: #8b5cf6; background: rgba(139, 92, 246, 0.1);"><i data-lucide="shopping-cart"></i></div>
+                    <div class="stat-info">
+                        <h3>Total Referrals</h3>
+                        <div class="value">128</div>
+                    </div>
+                </div>
+                <div class="stat-card" style="animation-delay: 0.3s;">
+                    <div class="stat-icon" style="color: #f59e0b; background: rgba(245, 158, 11, 0.1);"><i data-lucide="percent"></i></div>
+                    <div class="stat-info">
+                        <h3>Conversion Rate</h3>
+                        <div class="value">3.6%</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dash-panel" style="animation-delay: 0.4s; animation-fill-mode: both; animation-name: dashFade; animation-duration: 0.5s;">
+                <h2>Top Performing Products</h2>
+                <div class="dash-table-container">
+                    <table class="dash-table">
+                        <thead>
+                            <tr>
+                                <th>Product Name</th>
+                                <th>Category</th>
+                                <th>Clicks</th>
+                                <th>Sales</th>
+                                <th>Commission Earnings</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="font-weight: 600;">Premium Whey Protein</td>
+                                <td>Nutrition</td>
+                                <td>1,204</td>
+                                <td>45</td>
+                                <td style="color: #10b981; font-weight: 700;">₹11,250</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600;">Vitality Smartwatch</td>
+                                <td>Gadgets</td>
+                                <td>856</td>
+                                <td>32</td>
+                                <td style="color: #10b981; font-weight: 700;">₹16,000</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600;">Adjustable Dumbbells</td>
+                                <td>Fitness</td>
+                                <td>412</td>
+                                <td>18</td>
+                                <td style="color: #10b981; font-weight: 700;">₹3,600</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600;">Detox Green Tea</td>
+                                <td>Nutrition</td>
+                                <td>328</td>
+                                <td>33</td>
+                                <td style="color: #10b981; font-weight: 700;">₹1,650</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                <div class="dash-panel" style="animation-delay: 0.5s; animation-fill-mode: both; animation-name: dashFade; margin-bottom: 0;">
+                    <h2>Recent System Alerts</h2>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem;">
+                        <li style="display: flex; gap: 1rem; align-items: flex-start; padding-bottom: 1rem; border-bottom: 1px solid var(--dash-border);">
+                            <div style="background: rgba(16, 185, 129, 0.1); color: #10b981; padding: 0.5rem; border-radius: 8px;"><i data-lucide="check-circle" style="width: 20px;"></i></div>
+                            <div>
+                                <h4 style="margin-bottom: 0.2rem; font-size: 0.95rem;">Payout Successful</h4>
+                                <p style="color: var(--dash-muted); font-size: 0.85rem;">₹50,000 has been transferred to your connected bank account ending in *4567.</p>
+                            </div>
+                        </li>
+                        <li style="display: flex; gap: 1rem; align-items: flex-start; padding-bottom: 1rem; border-bottom: 1px solid var(--dash-border);">
+                            <div style="background: rgba(245, 158, 11, 0.1); color: #f59e0b; padding: 0.5rem; border-radius: 8px;"><i data-lucide="alert-circle" style="width: 20px;"></i></div>
+                            <div>
+                                <h4 style="margin-bottom: 0.2rem; font-size: 0.95rem;">New Commission Tier Eligible</h4>
+                                <p style="color: var(--dash-muted); font-size: 0.85rem;">You are 12 referrals away from unlocking the Diamond 18% commission tier.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="dash-panel" style="animation-delay: 0.6s; animation-fill-mode: both; animation-name: dashFade; margin-bottom: 0;">
+                    <h2>Active Campaigns</h2>
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <div style="border: 1px solid var(--dash-border); padding: 1rem; border-radius: 8px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <strong>Holiday Fitness Challenge</strong>
+                                <span class="dash-badge badge-active">Live</span>
+                            </div>
+                            <p style="color: var(--dash-muted); font-size: 0.85rem; margin-bottom: 1rem;">Instagram Story Sweepstakes focusing on Nutrition products.</p>
+                            <div style="background: #f1f5f9; height: 6px; border-radius: 3px; position:relative; overflow:hidden;">
+                                <div style="background: var(--dash-primary); width: 65%; height: 100%; position:absolute; top:0; left:0;"></div>
+                            </div>
+                            <div style="text-align: right; font-size: 0.75rem; color: var(--dash-muted); margin-top: 0.5rem;">65% Goal Reached</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        lucide.createIcons();
+        
+        // Mobile sidebar toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('mobileOverlay');
+
+        function toggleSidebar() {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        menuBtn.addEventListener('click', toggleSidebar);
+        overlay.addEventListener('click', toggleSidebar);
+    </script>
+</body>
+</html>

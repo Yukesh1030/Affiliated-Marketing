@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings | STACKLY PRO</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="dash-overlay" id="mobileOverlay"></div>
+
+    <aside class="dash-sidebar" id="sidebar">
+        <a href="index.html" class="dash-logo">STACKLY <span style="font-size:0.6rem; vertical-align: top; color: var(--dash-primary);">PRO</span></a>
+        
+        <nav class="dash-nav">
+            <a href="SellerDashboard.html" class="dash-nav-item">
+                <i data-lucide="layout-dashboard"></i> Dashboard
+            </a>
+            <a href="SellerProducts.html" class="dash-nav-item">
+                <i data-lucide="package-search"></i> Products
+            </a>
+            <a href="SellerAnalytics.html" class="dash-nav-item">
+                <i data-lucide="bar-chart-3"></i> Sales Analytics
+            </a>
+            <a href="SellerEarnings.html" class="dash-nav-item">
+                <i data-lucide="wallet"></i> Earnings
+            </a>
+            <a href="SellerMarketing.html" class="dash-nav-item">
+                <i data-lucide="megaphone"></i> Marketing
+            </a>
+            <a href="SellerSettings.html" class="dash-nav-item active">
+                <i data-lucide="settings"></i> Settings
+            </a>
+        </nav>
+
+        <div class="dash-logout">
+            <a href="Login.html" class="dash-nav-item">
+                <i data-lucide="log-out"></i> Sign Out
+            </a>
+        </div>
+    </aside>
+
+    <main class="dash-main">
+        <header class="dash-header">
+            <button class="dash-menu-btn" id="menuBtn">
+                <i data-lucide="menu"></i>
+            </button>
+            <div style="flex: 1; margin-left: 1.5rem;">
+                <a href="index.html" style="font-weight: 600; color: var(--dash-muted); display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;"><i data-lucide="arrow-left" style="width: 16px; height: 16px;"></i> Back to Home</a>
+            </div>
+            <div class="dash-user">
+                <span>Welcome, <strong>Seller</strong></span>
+                <div class="dash-avatar" style="background: #0f172a;">S</div>
+            </div>
+        </header>
+
+        <div class="dash-content">
+            <h1 class="dash-title">Seller Configuration</h1>
+
+            <div class="dash-panel" style="max-width: 600px;">
+                <h2 style="border-bottom: 1px solid var(--dash-border); padding-bottom: 1rem; margin-bottom: 1.5rem;">Business Profile</h2>
+                
+                <form action="#" onsubmit="event.preventDefault(); window.location.href='404.html';">
+                    <div class="dash-form-group">
+                        <label for="fullName">Trading Name</label>
+                        <input type="text" id="fullName" value="Global Affiliates LLC">
+                    </div>
+                    
+                    <div class="dash-form-group">
+                        <label for="emailAddr">Account Email</label>
+                        <input type="email" id="emailAddr" value="seller@stackly.com">
+                    </div>
+
+                    <div class="dash-form-group">
+                        <label for="payout">Payout Bank Account</label>
+                        <input type="text" id="payout" value="**** 4567">
+                    </div>
+
+                    <div style="margin-top: 2rem;">
+                        <button type="submit" class="dash-btn">Save Configurations</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        lucide.createIcons();
+        const menuBtn = document.getElementById('menuBtn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('mobileOverlay');
+
+        function toggleSidebar() {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        menuBtn.addEventListener('click', toggleSidebar);
+        overlay.addEventListener('click', toggleSidebar);
+
+        // Enforce 404 trapping
+        document.querySelectorAll('a:not(.dash-nav-item):not([href="index.html"])').forEach(link => {
+            link.addEventListener('click', e => { e.preventDefault(); window.location.href = '404.html'; });
+        });
+    </script>
+</body>
+</html>

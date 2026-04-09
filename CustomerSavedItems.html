@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved Items | STACKLY Dashboard</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="dashboard.css">
+    <style>
+        .saved-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .saved-card {
+            background: var(--dash-white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--dash-shadow);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+        .saved-card:hover {
+            transform: translateY(-5px);
+        }
+        .saved-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .saved-card-body {
+            padding: 1.5rem;
+        }
+        .saved-card-body h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--dash-dark);
+        }
+        .saved-price {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dash-primary);
+            margin-bottom: 1rem;
+        }
+        .remove-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: white;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            color: #ef4444;
+            transition: transform 0.2s;
+        }
+        .remove-btn:hover {
+            transform: scale(1.1);
+            background: #fee2e2;
+        }
+    </style>
+</head>
+<body>
+    <div class="dash-overlay" id="mobileOverlay"></div>
+
+    <aside class="dash-sidebar" id="sidebar">
+        <a href="index.html" class="dash-logo">STACKLY</a>
+        
+        <nav class="dash-nav">
+            <a href="CustomerDashboard.html" class="dash-nav-item">
+                <i data-lucide="layout-dashboard"></i> Overview
+            </a>
+            <a href="CustomerOrderTracking.html" class="dash-nav-item">
+                <i data-lucide="package"></i> Order Tracking
+            </a>
+            <a href="CustomerSavedItems.html" class="dash-nav-item active">
+                <i data-lucide="heart"></i> Saved Items
+            </a>
+            <a href="CustomerSettings.html" class="dash-nav-item">
+                <i data-lucide="settings"></i> Account Settings
+            </a>
+        </nav>
+
+        <div class="dash-logout">
+            <a href="Login.html" class="dash-nav-item">
+                <i data-lucide="log-out"></i> Sign Out
+            </a>
+        </div>
+    </aside>
+
+    <main class="dash-main">
+        <header class="dash-header">
+            <button class="dash-menu-btn" id="menuBtn">
+                <i data-lucide="menu"></i>
+            </button>
+            <div style="flex: 1; margin-left: 1.5rem;">
+                <a href="index.html" style="font-weight: 600; color: var(--dash-muted); display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;"><i data-lucide="arrow-left" style="width: 16px; height: 16px;"></i> Back to Home</a>
+            </div>
+            <div class="dash-user">
+                <span>Welcome, <strong>Customer</strong></span>
+                <div class="dash-avatar">C</div>
+            </div>
+        </header>
+
+        <div class="dash-content">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <h1 class="dash-title" style="margin-bottom: 0;">Saved Products (3)</h1>
+                <button class="dash-btn" style="background: var(--dash-white); color: var(--dash-text); border: 1px solid var(--dash-border);">Filter Categories</button>
+            </div>
+
+            <div class="saved-grid">
+                <div class="saved-card" style="animation: dashFade 0.4s ease forwards;">
+                    <button class="remove-btn" title="Remove"><i data-lucide="trash-2" style="width: 18px;"></i></button>
+                    <img src="https://images.pexels.com/photos/4031648/pexels-photo-4031648.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Jump Rope Pro" class="saved-img">
+                    <div class="saved-card-body">
+                        <span class="dash-badge badge-pending" style="display: inline-block; margin-bottom: 0.5rem;">Fitness</span>
+                        <h3>Jump Rope Pro</h3>
+                        <div class="saved-price">₹499</div>
+                        <button class="dash-btn" style="width: 100%;">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="saved-card" style="animation: dashFade 0.5s ease forwards; opacity: 0;">
+                    <button class="remove-btn" title="Remove"><i data-lucide="trash-2" style="width: 18px;"></i></button>
+                    <img src="https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Smart Eye Massager" class="saved-img">
+                    <div class="saved-card-body">
+                        <span class="dash-badge badge-active" style="display: inline-block; margin-bottom: 0.5rem;">Gadgets</span>
+                        <h3>Smart Eye Massager</h3>
+                        <div class="saved-price">₹1,999</div>
+                        <button class="dash-btn" style="width: 100%;">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="saved-card" style="animation: dashFade 0.6s ease forwards; opacity: 0;">
+                    <button class="remove-btn" title="Remove"><i data-lucide="trash-2" style="width: 18px;"></i></button>
+                    <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Wireless Sport Earbuds" class="saved-img">
+                    <div class="saved-card-body">
+                        <span class="dash-badge badge-active" style="display: inline-block; margin-bottom: 0.5rem;">Gadgets</span>
+                        <h3>Wireless Sport Earbuds</h3>
+                        <div class="saved-price">₹3,999</div>
+                        <button class="dash-btn" style="width: 100%;">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        lucide.createIcons();
+        const menuBtn = document.getElementById('menuBtn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('mobileOverlay');
+
+        function toggleSidebar() {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        menuBtn.addEventListener('click', toggleSidebar);
+        overlay.addEventListener('click', toggleSidebar);
+    </script>
+</body>
+</html>

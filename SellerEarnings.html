@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earnings | STACKLY PRO</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="dashboard.css">
+    <style>
+        .earning-card {
+            background: linear-gradient(135deg, var(--dash-dark), #1e293b);
+            color: white;
+            padding: 2rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .earning-card::after {
+            content: '';
+            position: absolute;
+            right: -20%;
+            top: -50%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+        .earning-value {
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 1rem 0;
+            font-family: 'Michroma', sans-serif;
+            color: var(--dash-primary);
+        }
+    </style>
+</head>
+<body>
+    <div class="dash-overlay" id="mobileOverlay"></div>
+
+    <aside class="dash-sidebar" id="sidebar">
+        <a href="index.html" class="dash-logo">STACKLY <span style="font-size:0.6rem; vertical-align: top; color: var(--dash-primary);">PRO</span></a>
+        
+        <nav class="dash-nav">
+            <a href="SellerDashboard.html" class="dash-nav-item">
+                <i data-lucide="layout-dashboard"></i> Dashboard
+            </a>
+            <a href="SellerProducts.html" class="dash-nav-item">
+                <i data-lucide="package-search"></i> Products
+            </a>
+            <a href="SellerAnalytics.html" class="dash-nav-item">
+                <i data-lucide="bar-chart-3"></i> Sales Analytics
+            </a>
+            <a href="SellerEarnings.html" class="dash-nav-item active">
+                <i data-lucide="wallet"></i> Earnings
+            </a>
+            <a href="SellerMarketing.html" class="dash-nav-item">
+                <i data-lucide="megaphone"></i> Marketing
+            </a>
+            <a href="SellerSettings.html" class="dash-nav-item">
+                <i data-lucide="settings"></i> Settings
+            </a>
+        </nav>
+
+        <div class="dash-logout">
+            <a href="Login.html" class="dash-nav-item">
+                <i data-lucide="log-out"></i> Sign Out
+            </a>
+        </div>
+    </aside>
+
+    <main class="dash-main">
+        <header class="dash-header">
+            <button class="dash-menu-btn" id="menuBtn">
+                <i data-lucide="menu"></i>
+            </button>
+            <div style="flex: 1; margin-left: 1.5rem;">
+                <a href="index.html" style="font-weight: 600; color: var(--dash-muted); display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;"><i data-lucide="arrow-left" style="width: 16px; height: 16px;"></i> Back to Home</a>
+            </div>
+            <div class="dash-user">
+                <span>Welcome, <strong>Seller</strong></span>
+                <div class="dash-avatar" style="background: #0f172a;">S</div>
+            </div>
+        </header>
+
+        <div class="dash-content">
+            <h1 class="dash-title">Earnings & Payouts</h1>
+            
+            <div class="earning-card">
+                <h3>Available Balance</h3>
+                <div class="earning-value">₹24,500</div>
+                <a href="404.html" class="dash-btn" style="text-decoration:none;"><i data-lucide="arrow-up-right" style="width: 16px; vertical-align: middle;"></i> Withdraw Funds</a>
+            </div>
+
+            <div class="dash-panel" style="animation: dashFade 0.4s ease forwards; opacity: 0; animation-delay: 0.2s;">
+                <h2>Pending Commissions</h2>
+                <div class="dash-table-container">
+                    <table class="dash-table">
+                        <thead>
+                            <tr>
+                                <th>Transaction ID</th>
+                                <th>Source</th>
+                                <th>Estimated Amount</th>
+                                <th>Expected Clearance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#TRX-99824</td>
+                                <td>Social Media Campaign A</td>
+                                <td style="font-weight: 700;">₹4,200</td>
+                                <td><span class="dash-badge badge-pending">Nov 15, 2024</span></td>
+                            </tr>
+                            <tr>
+                                <td>#TRX-99825</td>
+                                <td>Organic Site Links</td>
+                                <td style="font-weight: 700;">₹1,850</td>
+                                <td><span class="dash-badge badge-pending">Nov 18, 2024</span></td>
+                            </tr>
+                            <tr>
+                                <td>#TRX-99830</td>
+                                <td>Email Newsletter 2</td>
+                                <td style="font-weight: 700;">₹8,400</td>
+                                <td><span class="dash-badge badge-pending">Nov 22, 2024</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="dash-panel" style="animation: dashFade 0.5s ease forwards; opacity: 0; animation-delay: 0.4s;">
+                <h2>Payout History</h2>
+                <div class="dash-table-container">
+                    <table class="dash-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Invoice</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Oct 01, 2024</td>
+                                <td style="font-weight: 700;">₹50,000</td>
+                                <td><span class="dash-badge badge-active">Completed</span></td>
+                                <td><a href="404.html" style="color: var(--dash-primary); font-weight: 600;"><i data-lucide="download" style="width: 16px;"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td>Sep 01, 2024</td>
+                                <td style="font-weight: 700;">₹35,200</td>
+                                <td><span class="dash-badge badge-active">Completed</span></td>
+                                <td><a href="404.html" style="color: var(--dash-primary); font-weight: 600;"><i data-lucide="download" style="width: 16px;"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td>Aug 01, 2024</td>
+                                <td style="font-weight: 700;">₹42,100</td>
+                                <td><span class="dash-badge badge-active">Completed</span></td>
+                                <td><a href="404.html" style="color: var(--dash-primary); font-weight: 600;"><i data-lucide="download" style="width: 16px;"></i></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        lucide.createIcons();
+        const menuBtn = document.getElementById('menuBtn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('mobileOverlay');
+
+        function toggleSidebar() {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+
+        menuBtn.addEventListener('click', toggleSidebar);
+        overlay.addEventListener('click', toggleSidebar);
+
+        // Enforce 404 trapping
+        document.querySelectorAll('a:not(.dash-nav-item):not([href="index.html"])').forEach(link => {
+            link.addEventListener('click', e => { e.preventDefault(); window.location.href = '404.html'; });
+        });
+    </script>
+</body>
+</html>

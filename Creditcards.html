@@ -31,12 +31,12 @@
                     <li><a href="TopProductdeals.html">Top Product deals</a></li>
                     <li><a href="Creditcards.html" class="active">Credit cards</a></li>
                     <li><a href="HealthWellness.html">Health & Wellness</a></li>
-                    <li class="mobile-only"><a href="404.html" class="mobile-login">Login</a></li>
+                    <li class="mobile-only"><a href="Login.html" class="mobile-login">Login</a></li>
                 </ul>
             </nav>
 
             <div class="nav-right">
-                <a href="404.html" class="login-btn">
+                <a href="Login.html" class="login-btn">
                     <span>Login</span>
                     <i data-lucide="user-circle"></i>
                 </a>
@@ -401,7 +401,7 @@
                 if (target.id === 'mobileToggle' || target.closest('#mobileToggle') || target.classList.contains('cc-faq-header')) return;
 
                 const link = target.getAttribute('href');
-                if (link && (link.includes('index.html') || link.includes('About.html') || link.includes('TopProductdeals.html') || link.includes('Creditcards.html') || link.includes('HealthWellness.html') || link.startsWith('#'))) {
+                if (link && (link.includes('index.html') || link.includes('About.html') || link.includes('TopProductdeals.html') || link.includes('Creditcards.html') || link.includes('HealthWellness.html') || link.startsWith('#') || link.includes('Login.html') || link.includes('Signup.html') || link.includes('Customer') || link.includes('Seller'))) {
                     return;
                 }
                 
@@ -413,7 +413,7 @@
         // Update most existing links to point to 404.html
         document.querySelectorAll('a').forEach(link => {
             const href = link.getAttribute('href');
-            if (href && !href.includes('index.html') && !href.includes('About.html') && !href.includes('TopProductdeals.html') && !href.includes('Creditcards.html') && !href.includes('HealthWellness.html') && !href.startsWith('#')) {
+            if (href && !href.includes('index.html') && !href.includes('About.html') && !href.includes('TopProductdeals.html') && !href.includes('Creditcards.html') && !href.includes('HealthWellness.html') && !href.startsWith('#') && !href.includes('Login.html') && !href.includes('Signup.html') && !href.includes('Customer') && !href.includes('Seller')) {
                 link.setAttribute('href', '404.html');
             }
         });
