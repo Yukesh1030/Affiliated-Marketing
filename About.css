@@ -257,7 +257,7 @@
 /* CTA Vision */
 .vision-cta {
     padding: 8rem 2rem;
-    background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('asset/about_join_vision_new.webp');
+    background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('asset/about_join_vision.webp');
     background-size: cover;
     background-position: center;
     text-align: center;

@@ -17,7 +17,7 @@
 </head>
 <body>
     <header class="navbar">
-        <div class="header-container">
+        <div class="container">
             <div class="nav-left">
                 <a href="index.html" class="brand">
                     <span>STACKLY</span>
@@ -28,7 +28,7 @@
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="About.html" class="active">About us</a></li>
-                    <li><a href="./TopProductdeals.html">Top Product deals</a></li>
+                    <li><a href="TopProductdeals.html">Top Product deals</a></li>
                     <li><a href="404.html">Credit cards</a></li>
                     <li><a href="404.html">Health & Wellness</a></li>
                     <li class="mobile-only"><a href="404.html" class="mobile-login">Login</a></li>
@@ -389,6 +389,30 @@
 
         reveals.forEach(el => {
             observer.observe(el);
+        });
+
+        // 404 Trap Logic
+        document.addEventListener('click', (e) => {
+            const target = e.target.closest('a, button, [onclick]');
+            if (target) {
+                if (target.id === 'mobileToggle' || target.closest('#mobileToggle')) return;
+
+                const link = target.getAttribute('href');
+                if (link && (link.includes('index.html') || link.includes('About.html') || link.includes('TopProductdeals.html') || link.startsWith('#'))) {
+                    return;
+                }
+                
+                window.location.href = '404.html';
+                e.preventDefault();
+            }
+        }, true);
+
+        // Update most links to 404
+        document.querySelectorAll('a').forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && !href.includes('index.html') && !href.includes('About.html') && !href.includes('TopProductdeals.html') && !href.startsWith('#')) {
+                link.setAttribute('href', '404.html');
+            }
         });
 
     </script>

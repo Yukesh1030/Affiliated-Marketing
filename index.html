@@ -395,7 +395,7 @@
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-left">
-                <a href="404.html" class="footer-logo">STACKLY</a>
+                <a href="index.html" class="footer-logo">STACKLY</a>
                 <p class="copyright">&copy; Copyright 2026 STACKLY</p>
                 <p class="rights">All rights reserved.</p>
                 <ul class="footer-legal">
@@ -410,8 +410,8 @@
                 <div class="footer-col">
                     <h4>QUICK LINKS</h4>
                     <ul>
-                        <li><a href="404.html">Home</a></li>
-                        <li><a href="404.html">About us</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="About.html">About us</a></li>
                         <li><a href="TopProductdeals.html">Top Product deals</a></li>
                         <li><a href="404.html">Credit cards</a></li>
                         <li><a href="404.html">Health & Wellness</a></li>
@@ -456,19 +456,15 @@
         // Initialize Lucide icons
         lucide.createIcons();
 
-        // GLOBAL REDIRECTION: Ensure most links and cursor:pointer elements lead to 404.html
+        // GLOBAL REDIRECTION: Ensure most links lead to 404.html
         document.addEventListener('click', (e) => {
             const target = e.target.closest('a, button, [onclick]');
-            const computedStyle = window.getComputedStyle(e.target);
-            
-            if (target || computedStyle.cursor === 'pointer') {
-                const link = target?.getAttribute('href');
-                // Allow links to index.html and About.html
-                if (link && (link.includes('index.html') || link.includes('About.html') || link.startsWith('#'))) {
+            if (target) {
+                const link = target.getAttribute('href');
+                if (link && (link.includes('index.html') || link.includes('About.html') || link.includes('TopProductdeals.html') || link.startsWith('#'))) {
                     return;
                 }
                 
-                // Otherwise, trap to 404
                 window.location.href = '404.html';
                 e.preventDefault();
             }
@@ -477,8 +473,7 @@
         // Update most existing links to point to 404.html
         document.querySelectorAll('a').forEach(link => {
             const href = link.getAttribute('href');
-            // Allow exact matches or links containing the target filenames
-            if (href && !href.includes('index.html') && !href.includes('About.html') && !href.startsWith('#')) {
+            if (href && !href.includes('index.html') && !href.includes('About.html') && !href.includes('TopProductdeals.html') && !href.startsWith('#')) {
                 link.setAttribute('href', '404.html');
             }
         });

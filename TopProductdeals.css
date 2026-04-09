@@ -65,8 +65,13 @@ body {
 /* Carousel Container */
 .carousel-outer {
     position: relative;
-    overflow: hidden;
     padding: 20px 0;
+}
+
+.carousel-viewport {
+    overflow: hidden;
+    padding: 15px;
+    margin: 0 -15px; /* Offset for card shadows and hover scaling */
 }
 
 .carousel-inner {
@@ -176,8 +181,8 @@ body {
     transform: translateY(-50%) scale(1.1);
 }
 
-.arrow-prev { left: -25px; }
-.arrow-next { right: -25px; }
+.arrow-prev { left: -30px; }
+.arrow-next { right: -30px; }
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
@@ -199,3 +204,575 @@ body {
         flex: 0 0 200px;
     }
 }
+
+/* Amazon Deals Section */
+.amazon-deals {
+    padding: 0 2rem 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.amazon-card {
+    min-width: 420px;
+    flex: 0 0 420px;
+    background: #f2722b; /* Amazon Orange */
+    border-radius: 24px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 280px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    margin-bottom: 20px;
+}
+
+.amazon-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 50px -12px rgba(242, 114, 43, 0.3);
+}
+
+.amazon-logo-badge {
+    background: white;
+    width: 80px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.amazon-logo-badge img {
+    height: 20px;
+}
+
+.amazon-content {
+    position: relative;
+    z-index: 5;
+    max-width: 65%;
+}
+
+.amazon-category {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.amazon-headline {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.reward-bar {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    overflow: hidden;
+    padding-right: 12px;
+}
+
+.ck-badge {
+    background: #0052cc;
+    color: white;
+    padding: 4px 8px;
+    font-weight: 800;
+    font-size: 0.8rem;
+    margin-right: 10px;
+}
+
+.reward-text {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.amazon-card-img {
+    position: absolute;
+    right: -10px;
+    bottom: 0;
+    height: 90%;
+    width: 45%;
+    object-fit: contain;
+    z-index: 2;
+    pointer-events: none;
+    transition: transform 0.3s ease;
+}
+
+.amazon-card:hover .amazon-card-img {
+    transform: scale(1.1) translateX(-10px);
+}
+
+.grab-deal-btn {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background: white;
+    color: #f2722b;
+    padding: 0.7rem 1.2rem;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+.grab-deal-btn:hover {
+    background: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 1024px) {
+    .amazon-card {
+        min-width: 380px;
+        flex: 0 0 380px;
+    }
+}
+
+@media (max-width: 768px) {
+    .amazon-card {
+        min-width: 300px;
+        flex: 0 0 300px;
+        height: 240px;
+        padding: 1.5rem;
+    }
+    .amazon-headline { font-size: 1.3rem; }
+    .amazon-card-img { height: 80%; }
+    .amazon-deals { padding: 0 1rem 40px; }
+}
+
+/* --- MOBILE PHONES LISTING & MARKETPLACE STYLES --- */
+
+.listing-layout {
+    display: flex;
+    gap: 2.5rem;
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 0 2rem;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 280px;
+    flex: 0 0 280px;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    padding: 1.5rem;
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+}
+
+.sidebar h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #0f172a;
+}
+
+.filter-group {
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.filter-group:last-child {
+    border: none;
+}
+
+.filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #1e293b;
+    margin-bottom: 1rem;
+}
+
+.filter-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.price-range-inputs {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.price-input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 0.85rem;
+}
+
+.go-btn {
+    background: #0052cc;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.search-filter {
+    width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    font-size: 0.85rem;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: #475569;
+    cursor: pointer;
+}
+
+.checkbox-item input {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+/* Main Content Area */
+.main-content {
+    flex: 1;
+}
+
+.content-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.content-header h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.tabs-container {
+    display: flex;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    background: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #64748b;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.tab-btn.active {
+    color: #0052cc;
+    border-bottom-color: #0052cc;
+    background: rgba(0, 82, 204, 0.02);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* Phone Product Card */
+.phone-card {
+    background: white;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.phone-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+}
+
+.phone-img-container {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.phone-img-container img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.phone-info .brand {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #64748b;
+    margin-bottom: 0.25rem;
+    display: block;
+}
+
+.phone-info h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #0f172a;
+}
+
+.price-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.current-price {
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: #0f172a;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.discount-label {
+    color: #0052cc;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.badge-best-price {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.final-price-box {
+    margin-top: auto;
+}
+
+.final-price-box .label {
+    font-size: 0.85rem;
+    color: #64748b;
+    display: block;
+}
+
+.final-price-box .price {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+/* Marketplace Deals Card (Ali Express / eBay) */
+.market-deals-section {
+    padding: 80px 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.market-header {
+    border-bottom: 2px solid #f1f5f9;
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.market-header h2 {
+    font-size: 1.8rem;
+}
+
+.market-header h2 span {
+    color: #e11d48; /* Red for Ali */
+}
+
+.ebay-span {
+    color: #0052cc !important; /* Blue for eBay */
+}
+
+.deal-card {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.deal-card:hover { transform: translateY(-5px); }
+
+.deal-img {
+    height: 180px;
+    background: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    position: relative;
+}
+
+.deal-img img {
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.deal-meta {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.meta-icon {
+    background: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    color: #64748b;
+    cursor: pointer;
+}
+
+.meta-icon:hover { color: #e11d48; }
+
+.deal-details {
+    padding: 1.5rem;
+}
+
+.stars {
+    color: #fbbf24;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.deal-details h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #1e293b;
+}
+
+.deal-price {
+    font-weight: 700;
+    color: #e11d48;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.deal-footer {
+    border-top: 1px solid #f1f5f9;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8fafc;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.admin-link {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #f59e0b;
+}
+
+@media (max-width: 1024px) {
+    .sidebar { display: none; }
+    .listing-layout { padding: 0 1rem; }
+}
+
+/* --- SHOP NOW BUTTONS --- */
+.shop-now-btn {
+    display: block;
+    width: 100%;
+    background: #00cd66;
+    color: white;
+    text-align: center;
+    padding: 0.85rem;
+    border-radius: 12px;
+    font-weight: 700;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-family: 'Outfit', sans-serif;
+}
+
+.shop-now-btn:hover {
+    background: #00a852;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 205, 102, 0.2);
+}
+
+/* Amazon specific shop now fix */
+.amazon-card .grab-deal-btn {
+    bottom: 1.5rem;
+    right: 1.5rem;
+}
+
+/* --- REVEAL ANIMATIONS --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger for grid items */
+.phone-card.reveal.active:nth-child(2) { transition-delay: 0.1s; }
+.phone-card.reveal.active:nth-child(3) { transition-delay: 0.2s; }
+.phone-card.reveal.active:nth-child(4) { transition-delay: 0.3s; }
