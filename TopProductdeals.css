@@ -1,0 +1,201 @@
+/* --- TOP PRODUCT DEALS STYLES --- */
+:root {
+    --brand-bg: #ffffff;
+    --brand-border: #f1f5f9;
+    --brand-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    --offer-badge-bg: #fff1f2;
+    --offer-badge-text: #e11d48;
+    --cashback-btn-bg: #0052cc;
+    --cashback-btn-hover: #0747a6;
+}
+
+body {
+    background-color: #f8fafc;
+}
+
+.deals-hero {
+    padding-top: 120px;
+    padding-bottom: 60px;
+    background: #0f172a;
+    text-align: center;
+    color: white;
+}
+
+.deals-hero h1 {
+    font-size: 3rem;
+    font-family: 'Michroma', sans-serif;
+    margin-bottom: 1rem;
+}
+
+.deals-hero p {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+/* Most Popular Brands Section */
+.popular-brands {
+    padding: 80px 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.section-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.section-top-row h2 {
+    font-size: 2rem;
+    color: #0f172a;
+    font-weight: 700;
+}
+
+.view-all-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #0052cc;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* Carousel Container */
+.carousel-outer {
+    position: relative;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.carousel-inner {
+    display: flex;
+    gap: 2rem;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: grab;
+    user-select: none;
+}
+
+.carousel-inner:active {
+    cursor: grabbing;
+}
+
+/* Brand Card */
+.brand-card {
+    min-width: 250px;
+    flex: 0 0 250px;
+    background: var(--brand-bg);
+    border-radius: 20px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--brand-shadow);
+    border: 1px solid var(--brand-border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    position: relative;
+    height: 320px;
+}
+
+.brand-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.offer-badge {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    background: var(--offer-badge-bg);
+    color: var(--offer-badge-text);
+    padding: 0.5rem 1rem;
+    border-radius: 0 0 12px 12px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.brand-logo-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 2rem 0;
+}
+
+.brand-logo-container img {
+    max-width: 150px;
+    max-height: 80px;
+    object-fit: contain;
+}
+
+.cashback-btn {
+    width: 100%;
+    background: var(--cashback-btn-bg);
+    color: white;
+    padding: 0.85rem;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.cashback-btn:hover {
+    background: var(--cashback-btn-hover);
+}
+
+/* Carousel Arrows */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #f1f5f9;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.carousel-arrow:hover {
+    background: #00cd66;
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.arrow-prev { left: -25px; }
+.arrow-next { right: -25px; }
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .brand-card {
+        min-width: 220px;
+        flex: 0 0 220px;
+    }
+    .arrow-prev { left: 10px; }
+    .arrow-next { right: 10px; }
+}
+
+@media (max-width: 768px) {
+    .deals-hero h1 { font-size: 2.2rem; }
+    .section-top-row h2 { font-size: 1.5rem; }
+    .popular-brands { padding: 40px 1rem; }
+    .carousel-arrow { display: none; }
+    .brand-card {
+        min-width: 200px;
+        flex: 0 0 200px;
+    }
+}
