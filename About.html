@@ -168,20 +168,20 @@
         <section class="impact-stats-bar">
             <div class="impact-container">
                 <div class="stats-flex">
-                    <div class="stat-box reveal">
-                        <h2 class="counter">1.2M</h2>
+                    <div class="stat-box reveal" data-anim="counter">
+                        <h2 class="counter" data-target="1.2" data-suffix="M">0</h2>
                         <p>Active Partners</p>
                     </div>
-                    <div class="stat-box reveal">
-                        <h2 class="counter">$150M+</h2>
+                    <div class="stat-box reveal" data-anim="counter">
+                        <h2 class="counter" data-target="150" data-prefix="$" data-suffix="M+">0</h2>
                         <p>Paid in Commissions</p>
                     </div>
-                    <div class="stat-box reveal">
-                        <h2 class="counter">45</h2>
+                    <div class="stat-box reveal" data-anim="counter">
+                        <h2 class="counter" data-target="45">0</h2>
                         <p>Countries Served</p>
                     </div>
-                    <div class="stat-box reveal">
-                        <h2 class="counter">99.9%</h2>
+                    <div class="stat-box reveal" data-anim="counter">
+                        <h2 class="counter" data-target="99.9" data-suffix="%">0</h2>
                         <p>Uptime Reliability</p>
                     </div>
                 </div>
@@ -341,6 +341,30 @@
         // Initialize Lucide icons
         lucide.createIcons();
 
+        // Counter Animation Function
+        function animateCounter(el) {
+            const target = parseFloat(el.getAttribute('data-target'));
+            const prefix = el.getAttribute('data-prefix') || '';
+            const suffix = el.getAttribute('data-suffix') || '';
+            const duration = 2000;
+            const startTime = performance.now();
+            const isDecimal = el.getAttribute('data-target').includes('.');
+
+            function update(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const easedProgress = progress * (2 - progress);
+                const current = parseFloat((target * easedProgress).toFixed(isDecimal ? 1 : 0));
+                
+                el.innerText = prefix + (isDecimal ? current.toFixed(1) : current) + suffix;
+
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                }
+            }
+            requestAnimationFrame(update);
+        }
+
         // Reveal Animation on Scroll
         const reveals = document.querySelectorAll('.reveal');
         const observerOptions = {
@@ -351,13 +375,19 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
+                    
+                    // Trigger counter if this element is a stat box
+                    if (entry.target.getAttribute('data-anim') === 'counter') {
+                        const counterEl = entry.target.querySelector('.counter');
+                        if (counterEl) animateCounter(counterEl);
+                    }
+                    
                     observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
 
         reveals.forEach(el => {
-            // Ensure style.css has .reveal and .reveal.active styles
             observer.observe(el);
         });
 
