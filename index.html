@@ -297,18 +297,26 @@
                 <div class="calc-widget">
                     <div class="calc-row">
                         <div class="calc-label">Monthly Referrals</div>
-                        <div class="calc-slider-track"><div class="calc-slider-fill" style="width: 65%;"></div><div class="calc-slider-thumb" style="left: 65%;"></div></div>
-                        <div class="calc-val">250</div>
+                        <div class="calc-slider-track">
+                            <input type="range" min="0" max="1000" value="250" class="calc-range" id="refRange">
+                            <div class="calc-slider-fill" id="refFill" style="width: 25%;"></div>
+                            <div class="calc-slider-thumb" id="refThumb" style="left: 25%;"></div>
+                        </div>
+                        <div class="calc-val" id="refVal">250</div>
                     </div>
                     <div class="calc-row">
                         <div class="calc-label">Avg. Commission per Sale</div>
-                        <div class="calc-slider-track"><div class="calc-slider-fill" style="width: 40%;"></div><div class="calc-slider-thumb" style="left: 40%;"></div></div>
-                        <div class="calc-val">$45.00</div>
+                        <div class="calc-slider-track">
+                            <input type="range" min="0" max="200" value="45" class="calc-range" id="commRange">
+                            <div class="calc-slider-fill" id="commFill" style="width: 22.5%;"></div>
+                            <div class="calc-slider-thumb" id="commThumb" style="left: 22.5%;"></div>
+                        </div>
+                        <div class="calc-val" id="commVal">$45.00</div>
                     </div>
                     <div class="calc-divider"></div>
                     <div class="calc-total-box">
                         <span>Projected Monthly Earnings</span>
-                        <div class="total-amount">$11,250<span class="cents">.00</span></div>
+                        <div class="total-amount" id="totalAmount">$11,250<span class="cents">.00</span></div>
                     </div>
                 </div>
             </div>
@@ -465,6 +473,47 @@
                     window.location.href = '404.html';
                 }
             });
+        }
+
+        // Affiliate Success Calculator Logic
+        const refRange = document.getElementById('refRange');
+        const commRange = document.getElementById('commRange');
+        const refVal = document.getElementById('refVal');
+        const commVal = document.getElementById('commVal');
+        const totalAmount = document.getElementById('totalAmount');
+        const refFill = document.getElementById('refFill');
+        const refThumb = document.getElementById('refThumb');
+        const commFill = document.getElementById('commFill');
+        const commThumb = document.getElementById('commThumb');
+
+        function updateCalculator() {
+            const referrals = parseInt(refRange.value);
+            const commission = parseInt(commRange.value);
+            const total = referrals * commission;
+
+            // Update Labels
+            refVal.textContent = referrals;
+            commVal.textContent = `$${commission}.00`;
+            
+            // Format total with commas
+            const formattedTotal = new Intl.NumberFormat('en-US').format(total);
+            totalAmount.innerHTML = `$${formattedTotal}<span class="cents">.00</span>`;
+
+            // Update Visual Sliders
+            const refPercent = (referrals / refRange.max) * 100;
+            refFill.style.width = `${refPercent}%`;
+            refThumb.style.left = `${refPercent}%`;
+
+            const commPercent = (commission / commRange.max) * 100;
+            commFill.style.width = `${commPercent}%`;
+            commThumb.style.left = `${commPercent}%`;
+        }
+
+        if (refRange && commRange) {
+            refRange.addEventListener('input', updateCalculator);
+            commRange.addEventListener('input', updateCalculator);
+            // Initial call to ensure sync
+            updateCalculator();
         }
 
         // GLOBAL REDIRECTION: Ensure most links lead to 404.html
