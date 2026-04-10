@@ -504,6 +504,25 @@ ul {
     .hero-section p {
         font-size: 1.1rem;
     }
+
+    .search-container {
+        padding: 0.4rem;
+    }
+
+    .search-input-wrapper {
+        padding: 0.2rem;
+    }
+
+    .search-input-wrapper input {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .search-submit {
+        padding: 0.6rem;
+    }
 }
 /* Smarter Rates Section Styles */
 .find-smarter-rates-today {

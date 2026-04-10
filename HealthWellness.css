@@ -390,6 +390,32 @@ body {
     .hw-product-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    .hw-security-container {
+        padding: 3rem;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hw-hero {
+        padding: 100px 1rem 60px;
+    }
+    
+    .hw-security-container {
+        flex-direction: column;
+        padding: 2.5rem 1.5rem;
+        text-align: center;
+    }
+
+    .hw-security-list {
+        width: 100%;
+    }
+
+    .hw-sec-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 }
 
 @media (max-width: 640px) {
@@ -398,12 +424,17 @@ body {
     }
     .hw-step-container {
         flex-direction: column;
+        gap: 3rem;
     }
     .hw-newsletter-form {
         flex-direction: column;
+        gap: 1.5rem;
     }
     .hw-btn {
         width: 100%;
+    }
+    .hw-section-header h2 {
+        font-size: 2rem;
     }
 }
 

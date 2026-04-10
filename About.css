@@ -320,7 +320,22 @@
 }
 
 @media (max-width: 768px) {
-    .about-header { padding-top: 10rem; }
+    .about-header { 
+        padding-top: 8rem; 
+        padding-bottom: 4rem;
+    }
+    
+    .about-header h1 {
+        font-size: clamp(1.8rem, 10vw, 2.5rem);
+        word-wrap: break-word;
+        text-align: center;
+    }
+
+    .about-header p {
+        font-size: 1rem;
+        text-align: center;
+    }
+
     .stat-box h2 { font-size: 2.5rem; }
     .innovation-text h2 { font-size: 2.2rem; }
     .vision-cta h2 { font-size: 2.5rem; }

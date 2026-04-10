@@ -78,7 +78,7 @@
                     <!-- Amex Gold Card -->
                     <div class="cc-card cc-reveal" style="transition-delay: 0.1s;">
                         <div class="cc-badge">Premium</div>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/American_Express_logo_%282018%29.svg" alt="Amex Logo" class="cc-card-logo" style="width: 40px;">
+                        <img src="asset/logo_amex.webp" alt="Amex Logo" class="cc-card-logo">
                         <img src="https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?auto=format&fit=crop&q=80&w=400" alt="Amex Gold Card" class="cc-card-img">
                         <h3>Amex Gold Charge</h3>
                         <ul class="cc-benefits">
@@ -92,7 +92,7 @@
                     <!-- Amazon Pay ICICI -->
                     <div class="cc-card cc-reveal" style="transition-delay: 0.2s;">
                         <div class="cc-badge">Shopping</div>
-                        <img src="asset/logo_shopsy.webp" alt="ICICI Logo Placeholder" class="cc-card-logo">
+                        <img src="asset/logo_icici.webp" alt="ICICI Logo" class="cc-card-logo">
                         <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&q=80&w=400" alt="ICICI Card" class="cc-card-img">
                         <h3>Amazon Pay ICICI</h3>
                         <ul class="cc-benefits">
@@ -106,7 +106,7 @@
                     <!-- HDFC Regalia Gold -->
                     <div class="cc-card cc-reveal" style="transition-delay: 0.3s;">
                         <div class="cc-badge">Business</div>
-                        <img src="asset/logo_sbicard.webp" alt="HDFC Logo" class="cc-card-logo">
+                        <img src="asset/logo_hdfc.webp" alt="HDFC Logo" class="cc-card-logo">
                         <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&q=80&w=400" alt="HDFC Card" class="cc-card-img">
                         <h3>HDFC Regalia Gold</h3>
                         <ul class="cc-benefits">
@@ -120,7 +120,7 @@
                     <!-- Axis Bank Atlas -->
                     <div class="cc-card cc-reveal" style="transition-delay: 0.4s;">
                         <div class="cc-badge">Travel</div>
-                        <img src="asset/logo_agoda.webp" alt="Axis Logo" class="cc-card-logo">
+                        <img src="asset/logo_axis.webp" alt="Axis Logo" class="cc-card-logo">
                         <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80&w=400" alt="Axis Card" class="cc-card-img">
                         <h3>Axis Bank Atlas</h3>
                         <ul class="cc-benefits">
@@ -185,10 +185,10 @@
         <section class="cc-networks">
             <div class="cc-section-container">
                 <div class="cc-networks-grid cc-reveal">
-                    <div class="cc-network-item"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa"></div>
-                    <div class="cc-network-item"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard"></div>
-                    <div class="cc-network-item"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Rupay-Logo.png" alt="RuPay"></div>
-                    <div class="cc-network-item"><img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/American_Express_logo_%282018%29.svg" alt="Amex"></div>
+                    <div class="cc-network-item"><img src="asset/logo_visa.webp" alt="Visa"></div>
+                    <div class="cc-network-item"><img src="asset/logo_mastercard.webp" alt="Mastercard"></div>
+                    <div class="cc-network-item"><img src="asset/logo_rupay.webp" alt="RuPay"></div>
+                    <div class="cc-network-item"><img src="asset/logo_amex.webp" alt="Amex"></div>
                 </div>
             </div>
         </section>
@@ -269,9 +269,9 @@
             <div class="cc-section-container">
                 <h2>Join the <span class="highlight-text">Elite</span> Club</h2>
                 <p>Get early access to limited-time credit card offers and financial hacks.</p>
-                <form class="cc-newsletter-form">
-                    <input type="email" placeholder="Your premium email address">
-                    <button type="submit" class="cc-action-btn">Subscribe Now</button>
+                <form class="cc-newsletter-form" id="newsletterForm">
+                    <input type="email" id="newsletterEmail" placeholder="Your premium email address" required>
+                    <button type="submit" class="cc-action-btn" id="newsSubmit">Subscribe Now</button>
                 </form>
             </div>
         </section>
@@ -393,12 +393,24 @@
             });
         });
 
+        // Newsletter Form Validation & Redirection
+        const newsletterForm = document.getElementById('newsletterForm');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const emailInput = document.getElementById('newsletterEmail');
+                if (emailInput.value.trim() !== "" && emailInput.checkValidity()) {
+                    window.location.href = '404.html';
+                }
+            });
+        }
+
         // GLOBAL REDIRECTION: Ensure most links lead to 404.html
         document.addEventListener('click', (e) => {
             const target = e.target.closest('a, button, [onclick]');
             if (target) {
                 // EXEMPTIONS: Mobile toggle, FAQ headers, or other internal UI elements
-                if (target.id === 'mobileToggle' || target.closest('#mobileToggle') || target.classList.contains('cc-faq-header')) return;
+                if (target.id === 'mobileToggle' || target.closest('#mobileToggle') || target.classList.contains('cc-faq-header') || target.id === 'newsSubmit') return;
 
                 const link = target.getAttribute('href');
                 if (link && (link.includes('index.html') || link.includes('About.html') || link.includes('TopProductdeals.html') || link.includes('Creditcards.html') || link.includes('HealthWellness.html') || link.startsWith('#') || link.includes('Login.html') || link.includes('Signup.html') || link.includes('Customer') || link.includes('Seller'))) {

@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Michroma&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap');
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 :root {
     --auth-bg: #f5f7fa;
     --auth-card: #ffffff;
@@ -248,16 +254,20 @@ body.auth-page {
 
 /* Mobile responsive */
 @media (max-width: 600px) {
+    body.auth-page {
+        align-items: flex-start;
+        padding: 4rem 1rem 2rem;
+    }
     .auth-container {
-        padding: 2.5rem 2rem;
-        height: 100vh;
-        border-radius: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        padding: 3rem 1.5rem;
+        height: auto;
+        min-height: unset;
+        border-radius: 20px;
     }
     .auth-header {
-        top: 1rem;
-        left: 1rem;
+        top: 1.5rem;
+        left: 1.5rem;
+        width: 100%;
+        text-align: left;
     }
 }

@@ -348,4 +348,37 @@ body {
     .dash-main { margin-left: 0; }
     .dash-menu-btn { display: block; }
     .dash-overlay.active { display: block; }
+
+    .dash-header {
+        padding: 0 1rem;
+        gap: 1rem;
+    }
+
+    .dash-header > div:nth-child(2) {
+        flex: 0 !important; /* Override inline flex: 1 */
+        margin-left: 0.5rem !important;
+    }
+
+    .dash-user {
+        margin-left: auto;
+        gap: 0.5rem;
+    }
+
+    .dash-user span {
+        display: none; /* Hide 'Welcome, Customer' text only on very small screens if needed, or just shrink it */
+    }
+}
+
+@media (max-width: 480px) {
+    .dash-header {
+        height: 70px;
+    }
+
+    .dash-header a {
+        font-size: 0.85rem;
+    }
+
+    .dash-user span {
+        display: none;
+    }
 }
