@@ -55,20 +55,20 @@
             <div class="dash-panel" style="max-width: 600px;">
                 <h2 style="border-bottom: 1px solid var(--dash-border); padding-bottom: 1rem; margin-bottom: 1.5rem;">Profile Information</h2>
                 
-                <form action="#" onsubmit="event.preventDefault(); window.location.href='404.html';">
+                <form id="profileForm" onsubmit="event.preventDefault(); window.location.href='404.html';">
                     <div class="dash-form-group">
                         <label for="fullName">Full Name</label>
-                        <input type="text" id="fullName" value="John Doe">
+                        <input type="text" id="fullName" value="John Doe" required>
                     </div>
                     
                     <div class="dash-form-group">
                         <label for="emailAddr">Email Address</label>
-                        <input type="email" id="emailAddr" value="customer@stackly.com">
+                        <input type="email" id="emailAddr" value="customer@stackly.com" required>
                     </div>
 
                     <div class="dash-form-group">
                         <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" value="+91 9876543210">
+                        <input type="tel" id="phone" value="+91 9876543210" required>
                     </div>
 
                     <div style="margin-top: 2rem;">
@@ -80,15 +80,15 @@
             <div class="dash-panel" style="max-width: 600px; margin-top: 2rem;">
                 <h2 style="border-bottom: 1px solid var(--dash-border); padding-bottom: 1rem; margin-bottom: 1.5rem;">Password & Security</h2>
                 
-                <form action="#" onsubmit="event.preventDefault(); window.location.href='404.html';">
+                <form id="passwordForm">
                     <div class="dash-form-group">
                         <label for="currentPass">Current Password</label>
-                        <input type="password" id="currentPass" placeholder="••••••••">
+                        <input type="password" id="currentPass" placeholder="••••••••" required minlength="8">
                     </div>
                     
                     <div class="dash-form-group">
                         <label for="newPass">New Password</label>
-                        <input type="password" id="newPass" placeholder="••••••••">
+                        <input type="password" id="newPass" placeholder="••••••••" required minlength="8">
                     </div>
 
                     <div style="margin-top: 2rem;">
@@ -112,6 +112,43 @@
 
         menuBtn.addEventListener('click', toggleSidebar);
         overlay.addEventListener('click', toggleSidebar);
+
+        // Password Form Validation
+        const passwordForm = document.getElementById('passwordForm');
+        if (passwordForm) {
+            passwordForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const currentPass = document.getElementById('currentPass').value;
+                const newPass = document.getElementById('newPass').value;
+
+                if (newPass === currentPass) {
+                    alert('New password must be different from the current password.');
+                    return;
+                }
+
+                // If valid, continue to 404 trap
+                window.location.href = '404.html';
+            });
+        }
+
+        // Enforce 404 trapping for all other links
+        document.addEventListener('click', (e) => {
+            const target = e.target.closest('a, button');
+            if (target) {
+                // EXEMPTIONS: Navigation links, Submit buttons (handled by forms), and Menu toggle
+                const href = target.getAttribute('href');
+                const onclick = target.getAttribute('onclick');
+                const type = target.getAttribute('type');
+                
+                const allowed = ['index.html', 'CustomerDashboard.html', 'CustomerOrderTracking.html', 'CustomerSavedItems.html', 'CustomerSettings.html', 'Login.html'];
+                const isAllowed = allowed.some(page => href && href.includes(page));
+
+                if (!isAllowed && !onclick && target.id !== 'menuBtn' && type !== 'submit') {
+                    window.location.href = '404.html';
+                    e.preventDefault();
+                }
+            }
+        });
     </script>
 </body>
 </html>

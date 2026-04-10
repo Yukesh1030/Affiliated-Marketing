@@ -97,21 +97,21 @@
                                 <td>Premium Whey Protein</td>
                                 <td>Oct 24, 2024</td>
                                 <td><span class="dash-badge badge-active">Delivered</span></td>
-                                <td><a href="CustomerOrderTracking.html" style="color: var(--dash-primary); font-weight: 600;">Track</a></td>
+                                <td><a href="404.html" style="color: var(--dash-primary); font-weight: 600;">Track</a></td>
                             </tr>
                             <tr>
                                 <td>#ORD-8945</td>
                                 <td>Vitality Smartwatch</td>
                                 <td>Oct 28, 2024</td>
                                 <td><span class="dash-badge badge-pending">Shipped</span></td>
-                                <td><a href="CustomerOrderTracking.html" style="color: var(--dash-primary); font-weight: 600;">Track</a></td>
+                                <td><a href="404.html" style="color: var(--dash-primary); font-weight: 600;">Track</a></td>
                             </tr>
                             <tr>
                                 <td>#ORD-8951</td>
                                 <td>Non-Slip Yoga Mat</td>
                                 <td>Nov 01, 2024</td>
                                 <td><span class="dash-badge badge-pending">Processing</span></td>
-                                <td><a href="CustomerOrderTracking.html" style="color: var(--dash-primary); font-weight: 600;">Track</a></td>
+                                <td><a href="404.html" style="color: var(--dash-primary); font-weight: 600;">Track</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -135,6 +135,21 @@
 
         menuBtn.addEventListener('click', toggleSidebar);
         overlay.addEventListener('click', toggleSidebar);
+
+        // Enforce 404 trapping for all other links
+        document.addEventListener('click', (e) => {
+            const target = e.target.closest('a, button');
+            if (target) {
+                const href = target.getAttribute('href');
+                const onclick = target.getAttribute('onclick');
+                const allowed = ['index.html', 'CustomerDashboard.html', 'CustomerOrderTracking.html', 'CustomerSavedItems.html', 'CustomerSettings.html', 'Login.html'];
+                const isAllowed = allowed.some(page => href && href.includes(page));
+                if (!isAllowed && !onclick && target.id !== 'menuBtn') {
+                    window.location.href = '404.html';
+                    e.preventDefault();
+                }
+            }
+        });
     </script>
 </body>
 </html>

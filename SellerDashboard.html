@@ -194,6 +194,21 @@
 
         menuBtn.addEventListener('click', toggleSidebar);
         overlay.addEventListener('click', toggleSidebar);
+
+        // Enforce 404 trapping for all other links
+        document.addEventListener('click', (e) => {
+            const target = e.target.closest('a, button');
+            if (target) {
+                const href = target.getAttribute('href');
+                const onclick = target.getAttribute('onclick');
+                const allowed = ['index.html', 'SellerDashboard.html', 'SellerProducts.html', 'SellerAnalytics.html', 'SellerEarnings.html', 'SellerMarketing.html', 'SellerSettings.html', 'Login.html'];
+                const isAllowed = allowed.some(page => href && href.includes(page));
+                if (!isAllowed && !onclick && target.id !== 'menuBtn') {
+                    window.location.href = '404.html';
+                    e.preventDefault();
+                }
+            }
+        });
     </script>
 </body>
 </html>
