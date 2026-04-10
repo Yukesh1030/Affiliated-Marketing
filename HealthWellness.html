@@ -440,15 +440,7 @@
                     emailError.style.display = 'block';
                     successMsg.style.display = 'none';
                 } else {
-                    emailInput.style.borderColor = '#cbd5e1';
-                    emailError.style.display = 'none';
-                    successMsg.style.display = 'block';
-                    emailInput.value = '';
-                    
-                    // Hide success message after 4 seconds
-                    setTimeout(() => {
-                        successMsg.style.display = 'none';
-                    }, 4000);
+                    window.location.href = '404.html';
                 }
             });
             
