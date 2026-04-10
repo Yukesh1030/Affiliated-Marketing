@@ -365,7 +365,7 @@ body {
     }
 
     .dash-user span {
-        display: none; /* Hide 'Welcome, Customer' text only on very small screens if needed, or just shrink it */
+        display: none; /* Hide 'Welcome' text earlier to prevent overlap */
     }
 }
 
@@ -380,5 +380,8 @@ body {
 
     .dash-user span {
         display: none;
+    }
+    .dash-header a {
+        font-size: 0.8rem; /* Further reduce font for small screens */
     }
 }
