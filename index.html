@@ -61,13 +61,12 @@
                     <p class="reveal" style="color: antiquewhite;">Navigate every money move with guidance you can trust. Empowering your financial future with expert clarity.</p>
                     
                     <div class="search-container reveal">
-                        <div class="search-input-wrapper">
-                            <input type="text" placeholder="Ask me about personal finance..." id="heroSearch">
-                            <button class="search-submit" onclick="window.location.href='404.html'">
+                        <form id="heroSearchForm" class="search-input-wrapper">
+                            <input type="text" placeholder="Ask me about personal finance..." id="heroSearch" required>
+                            <button type="submit" class="search-submit" id="searchBtn">
                                 <i data-lucide="send"></i>
                             </button>
-                        </div>
-                        
+                        </form>
                     </div>
                 </div>
             </div>
@@ -456,11 +455,24 @@
         // Initialize Lucide icons
         lucide.createIcons();
 
+        // Hero Search Validation
+        const heroSearchForm = document.getElementById('heroSearchForm');
+        if (heroSearchForm) {
+            heroSearchForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const query = document.getElementById('heroSearch').value.trim();
+                if (query) {
+                    window.location.href = '404.html';
+                }
+            });
+        }
+
         // GLOBAL REDIRECTION: Ensure most links lead to 404.html
         document.addEventListener('click', (e) => {
             const target = e.target.closest('a, button, [onclick]');
             if (target) {
-                // EXEMPTIONS: Mobile toggle, FAQ headers, or other internal UI elements
+                // EXEMPTIONS: Search button, Mobile toggle, FAQ headers, etc.
+                if (target.id === 'searchBtn' || target.closest('#heroSearchForm')) return;
                 if (target.id === 'mobileToggle' || target.closest('#mobileToggle')) return;
 
                 const link = target.getAttribute('href');
