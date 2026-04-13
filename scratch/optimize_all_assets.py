@@ -28,8 +28,8 @@ def save_with_target_size(img, path, min_kb=71, max_kb=89):
     if current_size > max_kb:
         # Too big, scale down or reduce quality
         found = False
-        for scale in [1.0, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2]:
-            for q in range(95, 10, -5):
+        for scale in [1.0, 0.9, 0.8, 0.7, 0.6, 0.5, 0.45, 0.4, 0.35, 0.3, 0.25, 0.2, 0.15, 0.1]:
+            for q in range(98, 5, -2):
                 size = get_size(q, scale)
                 if min_kb <= size <= max_kb:
                     best_q = q
@@ -40,9 +40,8 @@ def save_with_target_size(img, path, min_kb=71, max_kb=89):
     elif current_size < min_kb:
         # Too small, scale up
         found = False
-        for scale in [1.0, 1.2, 1.5, 2.0, 2.5, 3.0, 4.0, 5.0, 8.0]:
-            for q in range(80, 101, 2):
-                if q > 100: q = 100
+        for scale in [1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.2, 2.5, 3.0, 4.0, 5.0, 8.0]:
+            for q in range(100, 70, -2):
                 size = get_size(q, scale)
                 if min_kb <= size <= max_kb:
                     best_q = q
