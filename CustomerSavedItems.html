@@ -176,7 +176,7 @@
                 const allowed = ['index.html', 'CustomerDashboard.html', 'CustomerOrderTracking.html', 'CustomerSavedItems.html', 'CustomerSettings.html', 'Login.html'];
                 const isAllowed = allowed.some(page => href && href.includes(page));
                 
-                if (!isAllowed && !onclick) {
+                if (!isAllowed && !onclick && target.id !== 'menuBtn') {
                     window.location.href = '404.html';
                     e.preventDefault();
                 }
